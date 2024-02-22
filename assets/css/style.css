@@ -116,9 +116,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-#main {
-  margin-left: 300px;
-}
+
 
 @media (max-width: 1199px) {
   #header {
