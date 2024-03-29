@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarDD | Jahid</title>
+<style>
+    body {
+        margin-top: 10px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .container {
+        margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .package {
+        width: 300px;
+        height: 200px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 20px; /* Add margin between packages */
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #ffffff;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    .footer {
+        margin-top: auto; /* Push footer to bottom */
+        text-align: center;
+    }
+    .footer-btn {
+        margin: 10px 0; /* Add margin between footer buttons */
+        padding: 10px;
+        background-color: #007bff;
+        color: #ffffff;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+    }
+    .footer-btn:hover {
+        background-color: #0056b3;
+    }
+    .footer-btn i {
+        margin-right: 5px; /* Add space between icon and text */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="package">
+        <h2>Car Damage Detection Demo</h2>
+        <p>Try live gradio.</p>
+        <a href="https://b4ecaa53839acb67ac.gradio.live" class="btn" target="_blank">Learn More</a>
+    </div>
+    <div class="package">
+        <h2>Car Damage Vision LLM</h2>
+        <p>Live demo coming soon</p>
+        <a href="" class="btn">Learn More</a>
+    </div>
+</div>
+<div class="footer">
+    <a href="https://hellojahid.github.io/" target="_blank" class="footer-btn"><i class="fas fa-user"></i>Contact</a>
+</div>
+
+<!-- Add Font Awesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
