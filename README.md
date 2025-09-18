@@ -4,7 +4,7 @@ This repository contains the source code for my personal portfolio website: **he
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 - **Name:** Md Jahid Hasan (Jahid)  
 - **Role:** PhD Candidate – AI for Automotive Damage Detection  
@@ -12,7 +12,7 @@ This repository contains the source code for my personal portfolio website: **he
 
 ---
 
-## 📚 Site Contents
+##  Site Contents
 
 | Section        | What’s Included                                                  |
 |----------------|-------------------------------------------------------------------|
@@ -24,7 +24,7 @@ This repository contains the source code for my personal portfolio website: **he
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript  
 - **Hosting:** GitHub Pages  
