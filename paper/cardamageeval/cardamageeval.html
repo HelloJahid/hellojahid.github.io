@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CarDamageEval">
+  <meta name="keywords" content="GPT-4, open-source, vision-language">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarDamageEval</title>
+
+
+  <meta name="google-site-verification" content="6lbYN1vX7A4sD8SrVniq84UEKyEUSBgxeP7d3FjuuK0" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <!-- <link rel="icon" href="./static/images/icon.png"> -->
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="shortcut icon" href="path/to/favicon.ico" type="image/x-icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  </head>
+
+  <style>
+
+    #main{
+        position: relative;;
+        width: 1200px;
+    }
+
+    .box{
+        float: left;
+        padding: 15px 0 0 15px;
+/*        background-color: red;*/
+    }
+
+    .pic{
+        width: 500px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .pic img{
+        width: 500px;
+    }
+
+  </style>
+
+
+
+  <body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CarDamageEval:</h1>
+          <h2 class="title is-2 publication-title">Benchmark Evaluation of Car Damage Assessment Using Vision Language Models</h2>
+          <div class="is-size-5">
+            <span class="author-block">
+                <a href="https://hellojahid.github.io/" style="color:#008AD7;font-weight:normal;">Md Jahid Hasan<sup>*</sup>
+                </a>,                
+            </span>
+            <!-- <span class="author-block">
+              <a href="https://junchen14.github.io/" style="color:#008AD7;font-weight:normal;">Jun Chen<sup>*</sup></a>,</span>
+            <span class="author-block">
+              <a href="https://xiaoqian-shen.github.io/" style="color:#008AD7;font-weight:normal;">Xiaoqian Shen</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://lx709.github.io/" style="color:#008AD7;font-weight:normal;">Xiang Li</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.mohamed-elhoseiny.com/" style="color:#008AD7;font-weight:normal;">Mohamed Elhoseiny</a>
+            </span> -->
+            
+          </div>
+
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> RMIT University </span>
+            <!-- <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6 </b>UCLA; </span> -->
+            <!-- <span class="author-block"><b style="color:#00A4EF; font-weight:normal">&#x25B6 </b>Microsoft Research, Redmond; </span> -->
+            <!-- <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b>Microsoft Cloud & AI </span> -->
+          </div>
+
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark"
+                   title="Paper Accepted(AusDM'25)">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper Accepted(AusDM'25)</span>
+                </a>
+              </span>
+
+              
+              <span class="link-block">
+                <a href="https://github.com/HelloJahid/CarDamageEval" target="_blank" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              
+              <span class="link-block">
+                <a href="https://cardd-ustc.github.io/" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<script>
+      window.addEventListener('load', function() {
+        const urls = [
+          'https://bb0eec8976f38a480c.gradio.live',
+          'https://94c50413658b59829f.gradio.live',
+          'https://16440e488436f49d99.gradio.live',
+          'https://02edd560d60615d755.gradio.live',
+        ];
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        const randomURL = urls[randomIndex];
+        const iframe = document.getElementById('gradio');
+        iframe.setAttribute('src', randomURL);
+      });
+    </script>
+
+
+
+<link rel="stylesheet" type="text/css" href="js/simple_style.css" />
+<script type="text/javascript" src="js/simple_swiper.js"></script>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+
+            Accurate and interpretable evaluation of vision–language models (VLMs) is critical for tasks that require both reliability and transparency, such as automotive damage assessment, where structured outputs facilitate reliable decision making. This paper proposes CarDamageEval, a dual-layer evaluation framework that evaluates both structural accuracy and semantic quality in VLM outputs. The framework specifies a predefined structured format consisting of explicit tuples of damage type, vehicle body part and severity level, enabling systematic quantitative evaluation through pair-matching metrics such as precision, recall and F1 score. In addition, semantic quality is evaluated using the Holistic Description Score (HDS), which assesses correctness, completeness, coherence and relevance. These two layers of evaluation are combined within_ the hybrid CarDD Score, which provides a balanced metric that captures both factual accuracy and descriptive clarity. To enable structured evaluation, we constructed a dataset from public vehicle images, annotated with bounding boxes and linked damage type, body part and severity labels. Baseline experiments show that the framework effectively distinguishes model performance across different settings, highlighting the value of fine-tuning for producing accurate and structured damage descriptions. Although designed for automotive assessment, the principles underpinning CarDamageEval are transferable to other structured vision–language tasks, including lesion detection in medical imaging and defect localisation in industrial inspection, positioning it as a versatile and reusable evaluation standard.
+
+</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    <br>
+    <br>
+
+
+
+
+   
+    <br>
+    <br>
+    <!-- Paper Model. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">Methodology of Evaluation Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+
+            The core challenge in evaluating vision–language models for automotive damage assessment lies in their tendency to generate free-form text that lacks structural consistency. Such outputs often omit critical attributes, misrepresent damage details, or provide descriptions that are difficult to verify against ground-truth annotations. This limitation prevents the use of conventional captioning metrics and complicates rigorous comparison across models. A reliable evaluation framework must therefore ensure that outputs conform to a predefined schema while also retaining semantic quality for practical use.
+
+The CarDamageEval framework addresses this challenge by introducing a dual-layer methodology. The first layer enforces structured prediction, where outputs are formalised as triplets of damage type, vehicle body part, and severity level. A matching operator compares predicted triplets with ground-truth annotations, and performance is quantified through precision, recall, F1 score, and accuracy.
+
+The second layer complements this structural evaluation with semantic quality assessment. Using the Holistic Description Score (HDS), generated narratives are evaluated on four dimensions: correctness, completeness, coherence, and relevance. This ensures that outputs are not only structurally accurate but also contextually meaningful and human-readable.
+
+To integrate both perspectives, the framework introduces the CarDD_Score, a hybrid metric computed as the harmonic mean of the F1 score and HDS. This design penalises imbalances and rewards models that achieve both factual correctness and descriptive clarity. The resulting methodology provides a rigorous, reproducible, and model-agnostic evaluation protocol, applicable not only to automotive assessment but also to other structured vision–language tasks such as lesion detection in medical imaging and defect localisation in industrial inspection.
+
+
+
+
+          </p>
+          <ul>
+          </ul>
+        </div>  
+        <img id="model" width="80%" src="/assets/VLM output.jpg">
+        <h3 class="subtitle has-text-centered">
+          <p style="font-family:Times New Roman"><b>ualitative Comparison of Structured Outputs from Fine‑Tuned VLMs. Green text denotes correct predictions, whereas red text marks incorrect outputs.</b></p>
+        </h3>   
+        <br>
+        <br>
+
+      </div>
+    </div>
+    <br>
+    <br>    
+    <!-- Paper Model. -->
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+
+@article{zhu2023minigpt,
+  title={MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models},
+  author={Zhu, Deyao and Chen, Jun and Shen, Xiaoqian and Li, Xiang and Elhoseiny, Mohamed},
+  journal={arXiv preprint arXiv:2304.10592},
+  year={2023}
+}
+</code></pre>
+  </div>
+</section> -->
+
+
+<section class="section" id="Acknowledgement">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgement</h2>
+    <p>
+      This website is adapted from <a
+      href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
+                                          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+      Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </div>
+</section>
+
+
+
+
+<script src="js/Underscore-min.js"></script>
+<script src="js/index.js"></script>
+
+
+<section class="section">
+<div id="main">
+  <!-- <div class="box"><div class="pic"><img src="demos/ad_1.png" alt=""></div></div> -->
+ 
+ 
+
+
+</div>
+
+</section>
+
+
+
+</body>
+
+</html>
