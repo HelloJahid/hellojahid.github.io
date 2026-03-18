@@ -332,6 +332,41 @@
       transform: translate(1px, -1px);
     }
 
+    /* ── UPDATE LOG ───────────────────────────────────────────── */
+    .card-update {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.6rem 0.9rem;
+      background: #fffbf0;
+      border: 1px solid #edd98a;
+      border-radius: calc(var(--radius) - 1px);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .update-icon {
+      font-size: 0.78rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .update-label {
+      font-weight: 700;
+      color: #7a5c00;
+      white-space: nowrap;
+      margin-right: 0.25rem;
+    }
+
+    .update-date {
+      font-weight: 600;
+      color: #9a7510;
+    }
+
+    .update-text {
+      color: #5a4a1a;
+    }
+
     /* ── PLACEHOLDER CARD ─────────────────────────────────────── */
     .placeholder-card {
       background: var(--surface);
@@ -464,6 +499,16 @@
                 sector, or industry group.
               </span>
             </div>
+          </div>
+
+          <!-- App update log — edit the date and note below when the app changes -->
+          <div class="card-update">
+            <span class="update-icon">🔔</span>
+            <span>
+              <span class="update-label">App Update</span>
+              <span class="update-date">(19 Mar 2026):</span>
+              <span class="update-text">More visualisation added to the app based on Commodity Filter Insights.</span>
+            </span>
           </div>
 
           <div class="card-footer">
