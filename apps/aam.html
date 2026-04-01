@@ -367,6 +367,45 @@
       color: #5a4a1a;
     }
 
+    /* ── SECTION GROUPS ──────────────────────────────────────── */
+    .section-group {
+      margin-bottom: 2.8rem;
+    }
+
+    .section-group:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .section-group-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-group-title {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .section-group-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid #c5daf0;
+      border-radius: 99px;
+      padding: 0.1rem 0.6rem;
+    }
+
     /* ── PLACEHOLDER CARD ─────────────────────────────────────── */
     .placeholder-card {
       background: var(--surface);
@@ -483,9 +522,114 @@
   <main>
     <div class="page-wrap">
 
-      <p class="section-label">Active Applications</p>
+      <!-- ── SECTION: Localis Full Delivery ── -->
+      <div class="section-group">
+        <div class="section-group-header">
+          <span class="section-group-title">Localis Full Delivery</span>
+          <span class="section-group-badge">Passenger OD</span>
+        </div>
+        <div class="card-grid">
 
-      <div class="card-grid">
+        <!-- =========================================================
+             APP 2 — Localis Full Delivery OD Explorer (Jan 2026)
+             To update the URL, change the href in the launch-btn below.
+             ========================================================= -->
+        <div class="app-card">
+
+          <div class="card-header">
+            <span class="card-icon">🗂️</span>
+            <div class="card-meta">
+              <h2 class="card-title">Localis Full Delivery OD Explorer <span style="font-size:0.85em;font-weight:400;color:var(--text-muted);">(Jan 2026)</span></h2>
+              <p class="card-description">
+                An interactive analytical tool for exploring device-level mobility data
+                to understand passenger movement patterns across Victoria, built on the
+                full Localis delivery dataset. This instance uses one month of data
+                (January 2026) from the complete delivery, enabling higher-fidelity
+                OD analysis compared to the sample dataset.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-features">
+            <div class="feature-item">
+              <span class="feature-icon">📍</span>
+              <span>
+                <strong>OD Passenger Flows —</strong>
+                Analyse origin–destination passenger flows derived from the full
+                Localis delivery dataset and explore top travel corridors by trip
+                frequency and device counts.
+              </span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🕐</span>
+              <span>
+                <strong>Temporal Patterns —</strong>
+                Examine hourly distributions and weekday versus weekend travel trends
+                to characterise regional travel demand behaviour.
+              </span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📏</span>
+              <span>
+                <strong>Distance-Based Corridor Screening —</strong>
+                Evaluate distance-based travel behaviour to identify long-distance
+                corridors (≥70 km) suitable for AAM feasibility analysis.
+              </span>
+            </div>
+          </div>
+
+          <!-- App update log — edit the date and note below when the app changes -->
+          <div class="card-update">
+            <span class="update-icon">🔔</span>
+            <span>
+              <span class="update-label">App Update</span>
+              <span class="update-date">(02 Apr 2026):</span>
+              <span class="update-text">Initial release — full Localis delivery dataset, January 2026 data chunk.</span>
+            </span>
+          </div>
+
+          <div class="card-footer">
+            <div class="footer-left-group">
+              <span class="status-pill">
+                <span class="status-dot"></span>
+                Live
+              </span>
+              <div class="tags">
+                <span class="tag">Passenger OD</span>
+                <span class="tag">Full Delivery</span>
+                <span class="tag">Jan 2026</span>
+                <span class="tag">Victoria</span>
+                <span class="tag">AAM Planning</span>
+              </div>
+            </div>
+            <a
+              class="launch-btn"
+              href="https://z5qvedj5chjursrjuy6bqf.streamlit.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open App
+              <svg viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+        <!-- END APP 2 -->
+
+        </div><!-- /.card-grid -->
+      </div><!-- /.section-group Localis Full Delivery -->
+
+      <!-- ── SECTION: Localis Sample Data ── -->
+      <div class="section-group">
+        <div class="section-group-header">
+          <span class="section-group-title">Localis Sample Data</span>
+          <span class="section-group-badge">Passenger OD</span>
+        </div>
+        <div class="card-grid">
 
         <!-- =========================================================
              APP 1 — Localis SampleData OD Explorer
@@ -573,10 +717,21 @@
           </div>
 
         </div>
-        <!-- END APP 2 -->
+        <!-- END APP 1 -->
+
+        </div><!-- /.card-grid -->
+      </div><!-- /.section-group Localis Sample Data -->
+
+      <!-- ── SECTION: CSIRO TraNSIT ── -->
+      <div class="section-group">
+        <div class="section-group-header">
+          <span class="section-group-title">CSIRO TraNSIT</span>
+          <span class="section-group-badge">Road Freight</span>
+        </div>
+        <div class="card-grid">
 
         <!-- =========================================================
-             APP 2 — CSIRO TraNSIT OD Explorer
+             APP 3 — CSIRO TraNSIT OD Explorer
              To update the URL, change the href in the launch-btn below.
              ========================================================= -->
         <div class="app-card">
@@ -653,7 +808,7 @@
           </div>
 
         </div>
-        <!-- END APP 1 -->
+        <!-- END APP 3 -->
 
         <!-- =========================================================
              ADD NEW APPS HERE — copy the app-card block above,
@@ -673,7 +828,8 @@
           </div>
         </div>
 
-      </div><!-- /.card-grid -->
+        </div><!-- /.card-grid -->
+      </div><!-- /.section-group CSIRO TraNSIT -->
 
     </div><!-- /.page-wrap -->
   </main>
