@@ -869,12 +869,14 @@ hr {
   .case-body { grid-template-columns: 1fr; }
 }
 
+/* Not sticky. It used to be `position: sticky; top: 6rem`, which made it the
+   last scroll-coupled compositing layer on the page -- and it was leaving
+   painted residue over the figures below it after a fast scroll. The aside is
+   three short link lists; it does not need to follow the reader down a long
+   case study, and losing it removes the last thing that can smear. */
 .case-aside {
-  position: sticky;
-  top: 6rem;
   font-size: .9rem;
 }
-@media (max-width: 900px) { .case-aside { position: static; } }
 
 .aside-block + .aside-block { margin-top: 1.9rem; padding-top: 1.9rem; border-top: 1px solid var(--rule); }
 .aside-block h4 {
