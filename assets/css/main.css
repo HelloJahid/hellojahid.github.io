@@ -694,6 +694,84 @@ hr {
   .metric--facts .fact:last-child { padding-bottom: 0; border-bottom: 0; }
 }
 
+/* ---------- case-study figures ----------
+   Diagrams sit on a light card in both themes, because every supplied figure is
+   drawn on white. Inverting them in dark mode would wreck the colour coding
+   they rely on; a light mat is honest and keeps them legible.
+
+   These are direct children of the .case-body grid and span both columns, so a
+   diagram gets the full ~1044px rather than the ~555px text column. Inside the
+   text column, detailed diagrams rendered too small to read. */
+.case-body > .case-figure {
+  grid-column: 1 / -1;
+}
+.case-figure {
+  margin: 2.75rem 0 0;
+  padding: 0;
+}
+.case-figure + .case-figure { margin-top: 2.25rem; }
+
+/* Height cap, not width fill. The figures range from 0.58 to 2.14 in aspect
+   ratio; letting them all fill the available width meant the portraits rendered
+   over 1000px tall and stopped the read dead. Capping the height and centring
+   gives every figure roughly the same visual weight whatever its shape, and the
+   detail lost to the cap is one click away via .fig-zoom. */
+.fig-zoom {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  position: relative;
+  border: 0;
+  line-height: 0;
+}
+.fig-zoom img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(72vh, 660px);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+}
+.fig-zoom::after {
+  content: "Full size";
+  position: absolute;
+  right: .55rem;
+  bottom: .55rem;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  background: rgba(22, 26, 25, .82);
+  padding: .38rem .6rem;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity .15s ease;
+  pointer-events: none;
+}
+.fig-zoom:hover::after,
+.fig-zoom:focus-visible::after { opacity: 1; }
+.fig-zoom:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.case-figure figcaption {
+  font-family: var(--mono);
+  font-size: .82rem;
+  line-height: 1.72;
+  color: var(--ink-faint);
+  margin-top: .9rem;
+  max-width: 68ch;
+  margin-inline: auto;
+}
+.case-figure figcaption b { color: var(--ink-muted); font-weight: 500; }
+
+@media (max-width: 640px) {
+  .fig-zoom img { max-height: 420px; }
+}
+
 /* ---------- asset slot ----------
    A visible, labelled placeholder wherever an image belongs but hasn't been
    supplied yet. Deliberately obvious: it names the file path, the dimensions
