@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  hellojahid.github.io is a GitHub Pages *user* site served from the domain
+  root, so this file resolves at /sitemap.xml.
+
+  It covers the whole property, not just the homepage: the AAM app portal and
+  the four paper project pages already live in this repo and are linked from
+  Google Scholar, the CV and phd-research-project-pages. All six were confirmed
+  returning 200. lastmod is only claimed for the homepage, which is the one
+  page whose change date is actually known.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://hellojahid.github.io/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://hellojahid.github.io/apps/aam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hellojahid.github.io/paper/cardvlm/cardvlm.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hellojahid.github.io/paper/cardamageeval/cardamageeval.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hellojahid.github.io/paper/groundingcardd/groundingcardd.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hellojahid.github.io/paper/sspanet/sspanet.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

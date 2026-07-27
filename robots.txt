@@ -1,0 +1,7 @@
+# hellojahid.github.io
+# Everything here is meant to be found. Nothing is disallowed.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://hellojahid.github.io/sitemap.xml

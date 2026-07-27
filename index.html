@@ -1,661 +1,1501 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-AU">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md Jahid Hasan — Applied AI Research &amp; Agentic Engineering</title>
 
-  <title>Jahid - Portfolio</title>
-  <meta content="PhD@RMIT " name="descriptison">
-  <meta content="" name="keywords">
-  <link rel="icon" href="/assets/img/profile.png" type="image/jpg">
-  
+<meta name="description" content="Md Jahid Hasan — Research Fellow in Data Science and Geospatial Analytics at RMIT University. Applied AI researcher and engineer building vision-language models and production multi-agent systems, each shipped with the evaluation that proves it works.">
+<meta name="author" content="Md Jahid Hasan">
+<link rel="canonical" href="https://hellojahid.github.io/">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Md Jahid Hasan — Applied AI Research &amp; Agentic Engineering">
+<meta property="og:description" content="Research Fellow at RMIT. Peer-reviewed vision-language models and production multi-agent architectures, each shipped with the evaluation that proves it works.">
+<meta property="og:url" content="https://hellojahid.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<meta property="og:image" content="https://hellojahid.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Md Jahid Hasan — Research Fellow, RMIT University. Applied AI research and agentic engineering.">
+<meta property="og:site_name" content="Md Jahid Hasan">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:image" content="https://hellojahid.github.io/assets/og-image.png">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101211" media="(prefers-color-scheme: dark)">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio - v1.2.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+<!-- Self-hosted, latin-subset WOFF2 (see tools/fetch-fonts.py). No third-party
+     font requests: nothing on this page reaches outside the origin. Only the
+     face that renders the h1 is preloaded — preloading all of them backfires. -->
+<link rel="preload" href="assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/main.css">
+
+<script>
+  /* Apply the stored theme before first paint so dark-mode users never see a
+     white flash. Everything else lives in assets/js/site.js. */
+  (function () {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || t === "light") {
+        document.documentElement.setAttribute("data-theme", t);
+      }
+    } catch (e) { /* private browsing */ }
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Md Jahid Hasan",
+  "jobTitle": "Research Fellow in Data Science and Geospatial Analytics",
+  "affiliation": { "@type": "Organization", "name": "RMIT University" },
+  "email": ["mailto:md.jahid.hasan@rmit.edu.au", "mailto:jahid2rmit@gmail.com"],
+  "url": "https://hellojahid.github.io/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressCountry": "AU" },
+  "sameAs": [
+    "https://github.com/HelloJahid",
+    "https://www.linkedin.com/in/hellojahid/",
+    "https://scholar.google.com/citations?user=7gQWnDMAAAAJ&hl",
+    "https://medium.com/@hellojahid"
+  ]
+}
+</script>
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Md Jahid Hasan</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#live">Live</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#research">Research</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <div style="background-color:rgb(0, 132, 255)"> <h1>Hi, I'm Jahid!</h1> </div>
+<main id="main">
+<span id="top"></span>
+
+<!-- ============================= HERO ============================= -->
+<section class="hero wrap">
+  <p class="role">
+    Research Fellow, RMIT University<span class="sep">·</span>Melbourne, Australia
+  </p>
+
+  <h1>Md Jahid&nbsp;Hasan</h1>
+
+  <p class="thesis">
+    An applied AI researcher and engineer who ships systems designed to
+    <em>prove their own reliability</em>, from peer-reviewed vision-language
+    models to production multi-agent architectures.
+  </p>
+
+  <p class="sub">
+    I build the geospatial and agentic core of RMIT's Advanced Air Mobility
+    analytics programme. Before that, an industry-embedded PhD with
+    Carsales.com Ltd, where the vision-language system I designed went into
+    production.
+  </p>
+
+  <div class="hero-links">
+    <a class="chip chip--accent" href="#live">See it running <span class="arw">↓</span></a>
+    <a class="chip chip--accent" href="assets/cv/CV_Jahid.pdf" download>Download CV (PDF) <span class="arw">↓</span></a>
+    <a class="chip" href="https://github.com/HelloJahid">GitHub <span class="arw">↗</span></a>
+    <a class="chip" href="https://scholar.google.com/citations?user=7gQWnDMAAAAJ&amp;hl">Google Scholar <span class="arw">↗</span></a>
+    <a class="chip" href="https://medium.com/@hellojahid">Medium <span class="arw">↗</span></a>
+    <a class="chip" href="https://www.linkedin.com/in/hellojahid/">LinkedIn <span class="arw">↗</span></a>
+    <a class="chip" href="mailto:md.jahid.hasan@rmit.edu.au">Work email <span class="arw">↗</span></a>
+    <a class="chip" href="mailto:jahid2rmit@gmail.com">Personal email <span class="arw">↗</span></a>
+  </div>
+
+  <!-- Three tracks and the point where they converge. Mirrors the "What I'm
+       Building" diagram on the GitHub profile, drawn in CSS rather than ASCII
+       so it reflows on mobile. Each column also doubles as navigation. -->
+  <section class="building reveal" aria-labelledby="building-h" id="building">
+    <p class="eyebrow">What I'm building</p>
+    <h2 class="building-lede" id="building-h">
+      My work sits at the convergence of three tracks, and the interesting part
+      is where they meet.
+    </h2>
+
+    <div class="tri">
+      <article class="tri-col">
+        <p class="tri-k"><span class="tri-n">01</span> Computer vision</p>
+        <p class="tri-where">PhD × Carsales.com Ltd</p>
+        <p class="chain">
+          CarDNet<span class="arrow">→</span>GroundingCarDD<span class="arrow">→</span>CarDVLM
+        </p>
+        <p class="chain chain--sub">+ CarDamageEval</p>
+        <p class="tri-status"><span class="dot" aria-hidden="true"></span>Shipped to production</p>
+        <p class="tri-go"><a href="#work">Case study 04 <span class="arw">↓</span></a></p>
+      </article>
+
+      <article class="tri-col">
+        <p class="tri-k"><span class="tri-n">02</span> Data science</p>
+        <p class="tri-where">Research Fellow @ RMIT</p>
+        <p class="chain">
+          Large-scale mobility<span class="arrow">&amp;</span>geospatial analytics on AWS
+        </p>
+        <p class="chain chain--sub">PySpark · Apache Sedona</p>
+        <p class="tri-status"><span class="dot" aria-hidden="true"></span>In production</p>
+        <p class="tri-go"><a href="#live">Try it live <span class="arw">↓</span></a></p>
+      </article>
+
+      <article class="tri-col">
+        <p class="tri-k"><span class="tri-n">03</span> Agentic AI</p>
+        <p class="tri-where">Build-in-public series</p>
+        <p class="chain">
+          PromptProof<span class="arrow">→</span>AgentProof<span class="arrow">→</span>GroundProof
+        </p>
+        <p class="chain chain--sub">+ AssessAuto · CICDAgent</p>
+        <p class="tri-status"><span class="dot" aria-hidden="true"></span>Shipped · more coming</p>
+        <p class="tri-go"><a href="#work">Case study 01 <span class="arw">↓</span></a></p>
+      </article>
     </div>
-    <div class="hero-container" data-aos="fade-in">
-      <!-- <div style="background-color:rgb(0, 132, 255)"> <h1>Hi, I'm Jahid!</h1> </div> -->
-<!--       <div style="background-color:rgb(128, 60, 66)"> <p>A <span class="typed" data-typed-items="Computer Vision Researcher at RMIT University"></span></p> </div> -->
+
+    <div class="converge" aria-hidden="true">
+      <span class="stem s1"></span>
+      <span class="stem s2"></span>
+      <span class="stem s3"></span>
+      <span class="bar"></span>
+      <span class="node"></span>
+      <span class="out"></span>
     </div>
-  </section><!-- End Hero -->
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title" >
-          <h2>About</h2>
-          <style>
-            div {
-              text-align: justify;
-              text-justify: inter-word;
-            }
-            </style>
-           </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <!-- <style>
-              img {
-                border: 1px solid #ddd;
-                border-radius: 40%;
-                padding: 5px;
-                width: 500;
-              }
-            </style> -->
-            <img src="assets/img/profile-jahid.JPG" class="img-fluid" alt="" style="border-radius: 45%">
-          </div>
-          <div class="col-lg-8 pt-0 pt-lg-0 content" data-aos="fade-left">
-            <br>
-            <h3>MD JAHID HASAN</h3>
-            <p>Hello ! I am Jahid</p>
-            <p>Currently pursuing a Ph.D., my research involves collaboration with industry on a Computer Vision-based damage detection system for vehicles. The objective is to accurately measure repair costs and determine selling prices. Simultaneously, I am actively engaged in the development of computer vision models, with a particular focus on integrating Large Language Models (LLMs). This dual commitment reflects my dedication to advancing the fields of Computer Vision and Deep Learning, combining academic research with practical applications in real-world scenarios.</p>
-           
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>In Numbers</p>
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
-            <div class="count-box">
-              <i class="icofont-papers"></i>
-              <span data-toggle="counter-up"> 15 </span>
-              
-              <p><strong>Publications in Journal & conference</strong></p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="icofont-document-folder"></i>
-              <span data-toggle="counter-up">21</span>
-              <p><strong>On Going Projects on Embedded System Design & Deep Learning</strong> </p>
-            </div>
-          </div>
-         
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="icofont-award"></i>
-              <span data-toggle="counter-up">10</span>
-              <p><strong>Achievement on Robotics Contest, Project Showcaing, Poster Presentation</strong> </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="icofont-learn"></i>
-              <span data-toggle="counter-up">4</span>
-              <p><strong>Languages Known and practised</strong> </p>
-            </div>
-          </div>
-      
-
-        </div>
-
-      </div>
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p></p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-4" data-aos="fade-up">
-
-       
-
-            <div class="progress">
-              <span class="skill">Python <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JAVA <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          
-            <div class="progress">
-              <span class="skill">C <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Arduino & Assembly<i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-           
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            
-
-            <div class="progress">
-              <span class="skill">SQL <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"> HTML<i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">CSS <i class="val"></i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Resume (<a href="assets/CV of Jahid.pdf" download style="font-size: 19px; color: #3366cc;">Download CV</a>)</h2>
-
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Md Jahid Hasan</h4>
-              <p><em>I am currently pursuing an industry-based Ph.D. in collaboration with <a target="_blank" href="https://www.rmit.edu.au/">RMIT University</a> and Carsales (<a target="_blank" href="https://www.carsales.com.au/">carsales.com.au</a>), under the supervision of <a target="_blank" href="https://www.rmit.edu.au/contact/staff-contacts/academic-staff/o/ong---kok-leong">Professor Kok-Leong Ong </a> and <a target="_blank" href="https://www.linkedin.com/in/agustinus-nalwan/">Agustinus Nalwan </a>.</em></p>
-            </div>
-            
-            <h3 class="resume-title">Professional Experience</h3>
-           
-            <div class="resume-item">
-              <h6>PhD Candidate - Data Science and Machine Learning at <a target="_blank" href="https://www.carsales.com.au/">carsales.com.au</a></h6>
-              <p><i>Sep 2022 - Present ·  Melbourne, Victoria, Australia</i></p>
-              <p>My current role involves developing an advanced Artificial Intelligence (AI) model to enhance e-commerce capabilities. The primary focus is on building a computer vision model to detect objects from videos and images.</p>
-            </div>
-            <div class="resume-item">
-              <h6>Technical Machine Learning internship at <a target="_blank" href="https://preneurlab.ca/">preneurlab</a></h6>
-              <p><i>Aug 2020 - Oct 2020 ·  Dhaka, Bangladesh</i></p>
-              <p>The key focus was on building a deep learning-based Bangla chatbot, sentiment analysis, and recommendation system with web APIs (using Flask or Django).</p>
-
-            </div>
-            <div class="resume-item">
-              <h6>Machine Learning and Robotics Instructor</h6>
-              <p><i>2017 - 2020 ·  Dinajpur, Dhaka, Bangladesh</i></p>
-              <p> ML Youtube: <a target="_blank" href="https://www.youtube.com/@MachineLearningTalksTips">Machine Learning Talks & Tips</a></p>
-              <p> Robotics Youtube: <a target="_blank" href="https://www.youtube.com/channel/UCwCItw_xlM9aN_O6U8S-DtQ">HSTU Light Followers</a></p>
-
-            </div>
-            
-            <div class="resume-item">
-              <!-- <h6>Internet of Things</h6> -->
-            </div>
-            <div class="resume-item">
-              <!-- <h6>Data Science</h6> -->
-              <!-- <br> -->
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Research Experience</h3>
-
-            <div class="resume-item">
-             <h6>Biomedical Imaging</h6>
-             <p>
-              I developed a Deep Learning-Based Retinal OCT Image Denoising system using Generative Adversarial Networks as part of my Bachelor's thesis
-              (<a target="_blank" href="https://www.researchgate.net/profile/Md-Jahid-Hasan-2">Researchgate</a>).
-              Additionally, I developed a Deep Learning architecture for 
-              accurately classifying microscopic bacteria images and performed image segmentation for COVID-19. My research in these areas has resulted 
-              in published papers contributing to the field
-              (<a target="_blank" href="https://scholar.google.com/citations?user=7gQWnDMAAAAJ&hl=en">Google Scholar</a>).</p>
-            </div>
-
-            <div class="resume-item">
-              <h6>Internet of Things, Embedded system and Robotics</h6>
-              <p>Implemented various Embedding system as well as robotics application such as an IoT system that uses real IP and RESTful API for controlling,
-                 monitoring and accessing the home appliances remotely from anywhere in the world using Android based smartphone app or web app
-                 (<a target="_blank" href="https://www.youtube.com/channel/UCwCItw_xlM9aN_O6U8S-DtQ">Youtube</a>).</p>
-             </div>
-
-
-
-            <h3 class="resume-title">Education</h3>
-
-            <div class="resume-item">
-              <h4>PhD in Business Information Systems</h4>
-              <h5>2022 - Present</h5>
-              <p><em><b>Royal Melbourne Institute of Technology (RMIT)
-                University, Australia.</b></em></p>
-              <!-- <p> CGPA 3.58 (out of 4).</p> -->
-            </div>
-
-            <div class="resume-item">
-              <h4>B.Sc in Electrical & Electronic Engineering</h4>
-              <h5>2016 - 2021</h5>
-              <p><em><b> Hajee Mohammad Danesh Science and Technology University (HSTU), Bangladesh</b></em></p>
-              <p> CGPA 3.57 (out of 4).</p>
-            </div>  
-            
-            
-            </div>
-          </div>
-        </div>
-
-      </div>
-      
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Project Section ======= -->
-   <section id="resume" class="resume">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Research Publication</h2>
-
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up">
-          <h5><p><b>Some of my Research work : </b></p></h5>
-          <br>
-
-          <div class="resume-item pb-0">
-            <h4>Vehicle Damage Detection Using Artificial Intelligence: A Systematic Literature Review</h4>
-            <p><em><b>Abstract</b>:
-               The review is structured around five key research questions and includes extensive empirical evaluations to identify gaps and challenges in existing methods. Findings reveal significant potential for AI to automate and enhance the damage detection process but also highlight areas requiring further research and development. The review discusses these gaps in detail, providing a comprehensive foundation for future work in this field.
-            <ul>
-              
-              <li><a target="_blank" href="https://doi.org/10.1002/widm.70027">Read more...</a></li>
-            </ul>
-            
-          </div>
-
-          <div class="resume-item pb-0">
-            <h4>GroundingCarDD: Text-Guided Multimodal Phrase Grounding for Car Damage Detection</h4>
-            <p><em><b>Abstract</b>:
-              GroundingCarDD is a phrase grounding model that bridges the gap between visual and textual information. By accurately aligning textual descriptions of car damage with specific image regions, it offers a robust solution for precise damage assessment. This innovative approach empowers various applications, including insurance claims processing, automotive repair, and autonomous vehicle safety.
-            <ul>
-              
-              <li><a target="_blank" href="https://doi.org/10.1109/ACCESS.2024.3506563">Read more...</a></li>
-            </ul>
-            
-          </div>
-
-          <div class="resume-item pb-0">
-            <h4>Deep learning based detection and segmentation of COVID-19 & pneumonia on chest X-ray image</h4>
-            <p><em><b>Abstract</b>:
-              The outbreaks of COVID-19 virus have crossed the limit to our expectation and it breaks all previous records of virus outbreaks. The effect of corona virus causes a serious illness may result in death as a consequence of substantial alveolar damage and progressive respiratory failure.
-            <ul>
-              
-              <li><a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9396878">Read more...</a></li>
-            </ul>
-            
-          </div>
-          
-
-          <div class="resume-item pb-0">
-            <h4>Bangla Compound Character Recognition by Combining Deep Convolutional Neural Network with Bidirectional Long Short-Term Memory</h4>
-            <p><em><b>Abstract</b>:
-              Recognition of Bangla handwritten compound characters has a significant role in Bangla language in order to develop a complete Bangla OCR. It is a challenging task owing to its </em></p>
-       
-            <ul>
-              
-              <li><a target="_blank" href="https://doi.org/10.1109/EICT48899.2019.9068817">Read more...</a></li>
-            </ul>
-            
-          </div>
-
-          <div class="resume-item pb-0">
-            <h4>Cricket Sentiment Analysis from Bangla Text Using Recurrent Neural Network with Long Short Term Memory Model</h4>
-            <p><em><b>Abstract</b>:
-              Nowadays, people used to express their feelings, thoughts, suggestions and opinions on different social platform and video sharing media. Many discussions are made on Twitter, Facebook and many respective forums on sports especially cricket and football. The opinion may express criticism in different manner,.</em></p>
-       
-            <ul>
-              
-              <li><a target="_blank" href="https://doi.org/10.1109/ICBSLP47725.2019.201500">Read more...</a></li>
-            </ul>
-            
-          </div>
-          <div class="resume-item pb-0">
-            <h4>Digit Recognition in Sign Language Based on Convolutional Neural Network and Support Vector Machine</h4>
-            <p><em><b>Abstract</b>:
-              Hearing and speech impaired individuals communicate using sign language among themselves and to the normal people. But it is challenging for non-sign language speaker to understand the sign language. Thus, sign language speaker or signer often finds difficulties in expressing their feelings. </em></p>
-       
-            <ul>
-              
-              <li><a target="_blank" href="https://doi.org/10.1109/STI47673.2019.9067999">Read more...</a></li>
-            </ul>
-            
-          </div>
-
-
-          <div class="resume-item pb-0">
-            <h4>Performance Analysis of Machine Learning Techniques for Microscopic Bacteria Image Classification</h4>
-            <p><em><b>Abstract</b>:
-              Microscopic bacterial image classification is of great significance in medical science in order to diagnosis numerous fatal diseases caused by bacteria.</em></p>
-       
-            <ul>
-              
-              <li><a target="_blank" href="https://doi.org/10.1109/ICCCNT45670.2019.8944597">Read more...</a></li>
-            </ul>
-            
-          </div>
-          <div class="resume-item pb-0">
-            <h4>Rice Disease Identification and Classification by Integrating Support Vector Machine With Deep Convolutional Neural Network</h4>
-            <p><em><b>Abstract</b>:
-              Over the world, rice is one of the most extensively consuming staple foods. But due to various diseases of rice, farmers can't yield rice according to their expectation..</em></p>
-       
-            <ul>
-              
-              <li><a target="_blank" href="https://doi.org/10.1109/ICASERT.2019.8934568">Read more...</a></li>
-            </ul>
-            
-          </div>
-
-          <div class="resume-item pb-0">
-            <h4>Wireless Home Automation System Using IoT and PaaS</h4>
-            <p><em>	<b>Abstract</b>:
-              Home automation based on Internet of Things (IoT) is getting huge attention of mass people in recent years. Smart home eases and secures the management of the home appliances.
-              </em></p>
-       
-            <ul>
-              
-              <li><a target="_blank" href="https://doi.org/10.1109/ICASERT.2019.8934676">Read more...</a></li>
-            </ul>
-            
-          </div>
-          
-
-        </div>
-
-       
-      </div>
-
+    <div class="headed">
+      <p class="eyebrow eyebrow--muted">Where I'm headed</p>
+      <p class="headed-statement">
+        Agentic systems that <b>see and reason over data</b>. Vision-language
+        agents that inspect, verify, and act. Multi-agent workflows that
+        orchestrate data pipelines, ground every claim in evidence, and
+        <b>prove their own behaviour</b> through recorded, evaluated
+        trajectories.
+      </p>
     </div>
-  </section><!-- End Resume Section -->
-
-   <!-- ======= Resume Section ======= -->
-  <section id="resume" class="resume">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Projects</h2>
-
-        <div class="grid-container">
-          <div class="video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/Pt8ifRqq0is?si=E-77UDcRHigMkojA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-          </div>
-          <div class="video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/kTE15hp6aIU?si=XkZTtXMLU9On7l7D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>              
-          </div>
-          <div class="video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/PetCm9qDlac?si=CFVdPlzYsLGHqzEj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>              
-          </div>
-          <div class="video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/dm2H05DWNAU?si=NrOzAn5IajnS4rYl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
-          </div>
-          <div class="video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/-Ty8lGgKWEY?si=s8m7r2I9cm31ZTxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
-          </div>
-          <div class="video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/2biW_jaFOug?si=dweWa4h8CF3EA6Ax" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>              
-          </div>
+  </section>
+</section>
 
 
-          <div class="video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/dhxSZaDBadQ?si=Y-CMGdJsJ4FPNPTr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>         
-          </div>
-          <div class="video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/SPUlIr818BY?si=RGXfxfGo4ogMzBzO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>          
-          </div>
-          <div class="video">
-            <iframe width="300" height="300" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FHSTUprojectHELP%2Fvideos%2F985791104893492%2F&show_text=false&width=560&t=0"  style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>  
-          </div>
-
-         
-          
+<!-- ======================= LIVE NOW — AAM ======================== -->
+<section class="section section--flush live" id="live">
+  <div class="wrap">
+    <div class="live-head reveal">
+      <div>
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Live now — current work</p>
+        <h2>Advanced Air Mobility, RMIT</h2>
       </div>
-
-
-      
-
-
-       
-      </div>
-
+      <p class="meta">
+        RMIT School of Engineering<span class="sep"> · </span>Feb 2026 – present
+      </p>
     </div>
-  </section><!-- Project -->
 
+    <p class="lede lede--narrow reveal">
+      I develop the geospatial core of RMIT's Advanced Air Mobility analytics
+      project — origin–destination models and mobility flow analysis across
+      Australian regional geographies, built with PySpark and Apache Sedona over
+      large-scale spatiotemporal datasets, running on EC2, EMR, Athena and
+      SageMaker. I'm now designing a multi-agent orchestration architecture over
+      that workflow with LangChain, LangGraph and the Claude Agent SDK,
+      decomposing it into specialised agents for data ingestion, distributed OD
+      extraction and demand estimation, and extending it to a delivery layer for
+      visualisation, freight analysis and reporting under quality gates and
+      human-in-the-loop checkpoints.
+    </p>
 
-  <!-- =======  Live project ======= -->
-  <section id="resume" class="resume">
-    <div class="container">
+    <p class="lede lede--narrow reveal">
+      Three of the tools built on that pipeline are public and running right
+      now. They're embedded below — not screenshots. Try them.
+    </p>
 
-      <div class="section-title">
-        <h2> Live project</h2>
-         
-          
-      </div>
-
-      <p>Click here <a href="app.html" target="_blank">here</a> for live demo.</p>
-
-
-      
-
-
-       
-      </div>
-
+    <div class="tabs reveal" role="tablist" aria-label="Live applications" data-tabs>
+      <button class="tab" type="button" role="tab" id="tab-full" aria-controls="panel-full" aria-selected="true" tabindex="0">
+        Localis Full Delivery OD
+      </button>
+      <button class="tab" type="button" role="tab" id="tab-sample" aria-controls="panel-sample" aria-selected="false" tabindex="-1">
+        Localis Sample Data OD
+      </button>
+      <button class="tab" type="button" role="tab" id="tab-transit" aria-controls="panel-transit" aria-selected="false" tabindex="-1">
+        CSIRO TraNSIT Freight <span class="flag">EXP</span>
+      </button>
     </div>
-  </section><!-- End Live project -->
 
+    <!-- Panel 1 -->
+    <div class="panel" id="panel-full" role="tabpanel" tabindex="0" aria-labelledby="tab-full"
+         data-app="https://localis-jan26-fulldata-odexplorer.streamlit.app/?embed=true"
+         data-app-title="Localis Full Delivery OD Explorer">
+      <div class="panel-meta">
+        <div class="desc">
+          <h3>Localis Full Delivery OD Explorer (Jan 2026)</h3>
+          <p class="meta">Released 2 Apr 2026 · Full one-month delivery dataset · Victoria</p>
+          <p>
+            Device-level mobility data explored across Victoria on the full
+            Localis delivery dataset for January 2026, rather than the sample —
+            higher-fidelity OD analysis than the tool below. Three functions:
+            <strong>OD passenger flows</strong> (top corridors by trip frequency
+            and device count), <strong>temporal patterns</strong> (hourly
+            distributions, weekday versus weekend), and
+            <strong>distance-based corridor screening</strong>, which identifies
+            long-distance corridors of 70 km or more as candidates for AAM
+            feasibility analysis.
+          </p>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <a class="url" href="https://localis-jan26-fulldata-odexplorer.streamlit.app/">localis-jan26-fulldata-odexplorer.streamlit.app</a>
+          <button class="frame-expand" type="button" data-expand aria-expanded="false">Expand</button>
+        </div>
+        <div class="frame-stub" data-state="idle">
+          <p class="stub-idle">Loads the live Streamlit app in place. It may take a few seconds to wake.</p>
+          <button class="btn" type="button" data-load>Load live app</button>
+          <p class="stub-loading"><span class="spinner" aria-hidden="true"></span>Waking the app…</p>
+          <p class="stub-timeout">
+            This is taking longer than usual — the app may be cold-starting, or
+            this browser may be blocking the embed. Use the direct link below.
+          </p>
+        </div>
+      </div>
+      <div class="frame-foot">
+        <p class="fallback">If the embed stays blank, the host is blocking framing — open it directly.</p>
+        <a class="chip chip--accent" href="https://localis-jan26-fulldata-odexplorer.streamlit.app/">Open full app <span class="arw">↗</span></a>
+      </div>
+    </div>
 
+    <!-- Panel 2 -->
+    <div class="panel" id="panel-sample" role="tabpanel" tabindex="0" aria-labelledby="tab-sample" hidden
+         data-app="https://localis-sampledata2odexplorer.streamlit.app/?embed=true"
+         data-app-title="Localis SampleData OD Explorer">
+      <div class="panel-meta">
+        <div class="desc">
+          <h3>Localis SampleData OD Explorer</h3>
+          <p class="meta">Released 27 Mar 2026 · Sample dataset · LGA level, Victoria</p>
+          <p>
+            The earlier, sample-data version of the same tool, working at LGA-level
+            granularity across Victoria with the same three functions — OD flows,
+            temporal patterns, and distance-based screening. It predates the
+            full-delivery explorer and is worth keeping visible: together the two
+            show the pipeline's evolution from sample to full scale.
+          </p>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <a class="url" href="https://localis-sampledata2odexplorer.streamlit.app/">localis-sampledata2odexplorer.streamlit.app</a>
+          <button class="frame-expand" type="button" data-expand aria-expanded="false">Expand</button>
+        </div>
+        <div class="frame-stub" data-state="idle">
+          <p class="stub-idle">Loads the live Streamlit app in place. It may take a few seconds to wake.</p>
+          <button class="btn" type="button" data-load>Load live app</button>
+          <p class="stub-loading"><span class="spinner" aria-hidden="true"></span>Waking the app…</p>
+          <p class="stub-timeout">
+            This is taking longer than usual — the app may be cold-starting, or
+            this browser may be blocking the embed. Use the direct link below.
+          </p>
+        </div>
+      </div>
+      <div class="frame-foot">
+        <p class="fallback">If the embed stays blank, the host is blocking framing — open it directly.</p>
+        <a class="chip chip--accent" href="https://localis-sampledata2odexplorer.streamlit.app/">Open full app <span class="arw">↗</span></a>
+      </div>
+    </div>
 
+    <!-- Panel 3 -->
+    <div class="panel" id="panel-transit" role="tabpanel" tabindex="0" aria-labelledby="tab-transit" hidden
+         data-app="https://csirotransit-od-explorer2.streamlit.app/?embed=true"
+         data-app-title="CSIRO TraNSIT OD Explorer">
+      <div class="panel-meta">
+        <div class="desc">
+          <h3>CSIRO TraNSIT OD Explorer</h3>
+          <p class="meta">Experimental · Last updated 19 Mar 2025 · Road freight, national</p>
+          <p>
+            An exploration tool for Australian road freight data from the CSIRO
+            TraNSIT Benchmarking platform, analysing OD freight flows at LGA level
+            across commodities, costs, emissions and industries. The
+            <strong>TraNSIT dashboard</strong> returns annual tonnes, transport
+            cost, CO₂ emissions, trip distance, freight value and industry
+            breakdowns for any origin→destination LGA pair;
+            <strong>commodity OD rankings</strong> rank freight corridors
+            nationally or from a single origin by individual commodity, filterable
+            by sector and industry group.
+          </p>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <a class="url" href="https://csirotransit-od-explorer2.streamlit.app/">csirotransit-od-explorer2.streamlit.app</a>
+          <button class="frame-expand" type="button" data-expand aria-expanded="false">Expand</button>
+        </div>
+        <div class="frame-stub" data-state="idle">
+          <p class="stub-idle">Loads the live Streamlit app in place. It may take a few seconds to wake.</p>
+          <button class="btn" type="button" data-load>Load live app</button>
+          <p class="stub-loading"><span class="spinner" aria-hidden="true"></span>Waking the app…</p>
+          <p class="stub-timeout">
+            This is taking longer than usual — the app may be cold-starting, or
+            this browser may be blocking the embed. Use the direct link below.
+          </p>
+        </div>
+      </div>
+      <div class="frame-foot">
+        <p class="fallback">If the embed stays blank, the host is blocking framing — open it directly.</p>
+        <a class="chip chip--accent" href="https://csirotransit-od-explorer2.streamlit.app/">Open full app <span class="arw">↗</span></a>
+      </div>
+    </div>
 
+    <noscript>
+      <div class="asset-slot asset-slot--solid">
+        <p class="tag">JavaScript is off</p>
+        <p class="what">
+          The tabbed demo switcher and the in-page embeds need JavaScript. All
+          three applications are live and work fine on their own:
+        </p>
+        <p class="spec">
+          <a href="https://localis-jan26-fulldata-odexplorer.streamlit.app/">Localis Full Delivery OD Explorer</a><br>
+          <a href="https://localis-sampledata2odexplorer.streamlit.app/">Localis SampleData OD Explorer</a><br>
+          <a href="https://csirotransit-od-explorer2.streamlit.app/">CSIRO TraNSIT OD Explorer</a>
+        </p>
+      </div>
+    </noscript>
 
+    <p class="reveal mt-2">
+      <a class="chip" href="apps/aam.html">All AAM applications <span class="arw">↗</span></a>
+    </p>
+  </div>
+</section>
 
+<!-- ========================= CASE STUDIES ========================= -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected work</p>
+      <h2>Four builds, and the evidence for each</h2>
+      <p class="lede">
+        Three agentic systems, then the vision-language research they grew
+        out of. All four share one discipline: build the system, then build the
+        thing that proves the system works.
+      </p>
+    </div>
 
+    <!-- ---------------- 01 The Proof series ---------------- -->
+    <article class="case reveal">
+      <header class="case-head">
+        <p class="eyebrow">Case study 01 — Agentic engineering</p>
+        <h3>The Proof series</h3>
+        <p class="hook">Building an agent is cheap now. Proving it works is the skill.</p>
+      </header>
 
+      <div class="case-body">
+        <div class="case-main">
+          <p>
+            An LLM system is easy to demo and hard to trust. Three projects,
+            each documented publicly as it shipped, take that problem one layer
+            at a time: first make a single output verifiable, then make a
+            self-directing agent measurable, then take the runtime that came out
+            of it and point it at a harder problem to see whether it holds.
+          </p>
+          <p>
+            Each stage builds on the last one's runtime. The third stage is
+            graded by the harness the second stage produced — which is the
+            actual claim being made here, that the evaluation machinery
+            generalises rather than being written to flatter one demo.
+          </p>
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
+          <div class="chapter">
+            <p class="chapter-label"><span class="n">01</span> · Stage one</p>
+            <h4>PromptProof</h4>
+            <p class="q">Can I trust this output?</p>
+            <p>
+              A self-correcting prompting engine that verifies information rather
+              than assuming it. The demonstration task is a grounded claim
+              checker: paste a paragraph, and the engine decomposes it into
+              atomic claims, checks each against live web evidence, and returns
+              Supported / Refuted / Unverifiable with a citation.
+            </p>
+            <ul>
+              <li><strong>Prompt chaining</strong> — the task decomposes into extract → search → judge</li>
+              <li><strong>Pydantic gate checks</strong> — every intermediate output is validated against a schema, with halt, retry, and retry-with-feedback logic</li>
+              <li><strong>A gate-checked ReAct tool</strong> — the web-search call is itself schema-validated with controlled retry, so a broken observation can't corrupt the chain</li>
+              <li><strong>Feedback loop</strong> — a rule-based evaluator reviews the finished report and loops until it passes or hits a cap</li>
+            </ul>
+            <p>
+              A <code>RunTrace</code> records every step, attempt, retry reason,
+              token count and timing. The model client and the search transport
+              are both injectable, so the whole engine runs against mocks for
+              offline development.
+            </p>
+            <p class="footnote">
+              The four mechanisms above come out of a structured study document in
+              the <a href="https://github.com/HelloJahid/Agentic-AI">Agentic-AI</a>
+              repo covering system and user prompts, role-based prompting, chain
+              of thought, ReAct, prompt chaining, gate checks and feedback loops.
+              It's the groundwork this stage was built from, not a separate project.
+            </p>
+          </div>
 
-        <div class="section-title">
-          <h2>Memories</h2>
+          <div class="chapter">
+            <p class="chapter-label"><span class="n">02</span> · Stage two</p>
+            <h4>AgentProof</h4>
+            <p class="q">Can I trust a system that picks its own path?</p>
+            <p>
+              A from-scratch agent runtime — no LangGraph, no CrewAI — at roughly
+              1,500 lines of readable Python, written specifically to expose the
+              mechanics of an agent loop and prove they work rather than hide
+              them behind a framework.
+            </p>
+            <ul>
+              <li><strong>State-machine core</strong> — typed state in Pydantic, single-job steps, conditional routing, and a step budget so loops can never mean forever</li>
+              <li><strong>Gate-checked tool use</strong> — arguments validated before the world is touched, responses validated before the model sees them; transient failures retry invisibly, permanent ones become structured errors the agent can reason about</li>
+              <li><strong>Flight recorder</strong> — every run writes a crash-safe JSONL trace of thoughts, tool calls, observations, gate outcomes, token counts and timing; any run reconstructs fully from its file alone</li>
+              <li><strong>Evaluation harness</strong> — golden datasets, rule evaluators across four dimensions (task completion, quality, tool interaction, system metrics), three lenses (final response, single step, trajectory), a bias-aware LLM-as-judge, and a CI regression gate</li>
+              <li><strong>Trajectory viewer</strong> — any trace becomes a terminal story or a self-contained HTML report</li>
+            </ul>
+            <p>
+              90+ tests and the CI eval gate run fully mocked: no API keys, no
+              network, no excuses for not verifying behaviour. Live model and
+              live search are injected through the same interfaces the mocks
+              implement.
+            </p>
+
+            <div class="table-scroll">
+              <table>
+                <caption class="meta tbl-caption">What changed between stage one and stage two</caption>
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">PromptProof</th>
+                    <th scope="col">AgentProof</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Core question</th>
+                    <td>Can I trust this <em>output</em>?</td>
+                    <td>Can I trust a system that picks its own path?</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Control flow</th>
+                    <td>Fixed prompt chain, decided at design time</td>
+                    <td>State machine and router, decided at runtime</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Observability</th>
+                    <td>Linear step log (RunTrace)</td>
+                    <td>Crash-safe, replayable trajectory and viewer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Quality enforcement</th>
+                    <td>At generation time — fixes this output</td>
+                    <td>At development time — a CI gate grades behaviour</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+            <figure class="case-figure">
+              <a class="fig-zoom" href="assets/img/figures/agentproof-runtime.png" target="_blank" rel="noopener">
+            <img src="assets/img/figures/agentproof-runtime.png" alt="The AgentProof runtime: a state machine of prepare, model call, router and tool executor, with the model client and tool transport injected from outside, every step written to a crash-safe JSONL trace, and that trace feeding both the viewer and the CI regression gate."
+                   width="926" height="565" loading="lazy" decoding="async">
+            </a>
+              <figcaption><b>The AgentProof runtime.</b> The model client and tool transport are injected, which is what lets the whole thing run against mocks with no keys and no network. Every run lands in the JSONL flight recorder, which feeds both the trajectory viewer and the CI eval gate.</figcaption>
+            </figure>
+
+          <div class="chapter">
+            <p class="chapter-label"><span class="n">03</span> · Stage three</p>
+            <h4>GroundProof</h4>
+            <p class="q">Does the runtime hold up on a harder problem?</p>
+            <p>
+              Retrieval-augmented generation that knows when facts expire and
+              pays only for the context it needs. It is built <em>on</em> the
+              AgentProof runtime — state machine, tool airlock, flight recorder,
+              eval harness — and graded <em>by</em> it, which is the clearest
+              evidence that stage two generalises rather than being a one-off.
+            </p>
+            <ul>
+              <li><strong>Time-aware retrieval</strong> — every chunk carries an <code>observed_at</code> timestamp and every query runs "as of" a moment; conflicting facts resolve through deterministic supersedence rules where the later date wins and the older is kept as dated history, and answers must carry dated citations</li>
+              <li><strong>Query-aware compression</strong> — between retrieval and synthesis, sentences are scored against the question and knapsack-packed into a token budget with per-sentence source attribution preserved</li>
+            </ul>
+            <p>
+              The full pipeline: adaptive router (none / one-shot / multi-hop) →
+              temporal retrieval → retrieval grader gate, where weak evidence
+              triggers a corrective fallback of reformulate, retry, then web
+              search → supersedence resolver → context compressor → synthesis
+              with mandatory dated citations. It runs fully offline by default,
+              with no API keys and the corpus committed to the repo.
+            </p>
+
+            <div class="metric">
+              <div class="figure">62%</div>
+              <div class="label">
+                fewer prompt tokens
+                <small>with evidence retention unchanged</small>
+              </div>
+            </div>
+
+            <figure class="case-figure">
+              <a class="fig-zoom" href="assets/img/figures/groundproof-pipeline.png" target="_blank" rel="noopener">
+            <img src="assets/img/figures/groundproof-pipeline.png" alt="The GroundProof pipeline: a question with an as-of date enters an adaptive router, then temporal retrieval, then a grader gate that either passes strong evidence on to the supersedence resolver and context pruner, or diverts weak evidence to a corrective fallback that reformulates, retries and falls back to web search."
+                   width="1500" height="1358" loading="lazy" decoding="async">
+            </a>
+              <figcaption><b>Weak evidence never reaches synthesis.</b> The grader gate diverts it into a corrective fallback instead, and the supersedence resolver settles conflicting facts by date before anything is written. Every answer carries dated citations.</figcaption>
+            </figure>
+          </div>
         </div>
 
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Landscape</li>
-              <li data-filter=".filter-card">Portrait</li>
+        <aside class="case-aside">
+          <div class="aside-block">
+            <h4>Repositories</h4>
+            <ul>
+              <li><a class="chip" href="https://github.com/HelloJahid/PromptProof">PromptProof <span class="arw">↗</span></a></li>
+              <li><a class="chip" href="https://github.com/HelloJahid/AgentProof">AgentProof <span class="arw">↗</span></a></li>
+              <li><a class="chip" href="https://github.com/HelloJahid/GroundProof">GroundProof <span class="arw">↗</span></a></li>
             </ul>
           </div>
-        </div>
-
-         
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-         
-          <!-- Tulip tour -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Tulip23/tulip_4.JPG" class="img-fluid" alt="">
-            </div>
+          <div class="aside-block">
+            <h4>Written up in</h4>
+            <ul>
+              <li><a href="https://medium.com/towards-artificial-intelligence/clever-prompts-are-cheap-now-reliable-llm-prompting-systems-are-the-skill-4229e147ebaf">Part 1 — Clever Prompts Are Cheap Now</a></li>
+              <li><a href="https://medium.com/towards-artificial-intelligence/your-llm-lies-confidently-i-built-an-engine-that-doesnt-2154b4857d59">Part 2 — Your LLM Lies Confidently</a></li>
+              <li><a href="https://medium.com/towards-artificial-intelligence/building-an-agent-is-cheap-now-proving-it-works-is-the-skill-35bd2a5f62e9">Part 3 — An Agent You Cannot Watch</a></li>
+              <li><a href="https://medium.com/towards-artificial-intelligence/building-an-agent-is-cheap-now-proving-it-works-is-the-skill-1376cba13160">Part 4 — Building an Agent Is Cheap Now</a></li>
+              <li><a href="https://medium.com/towards-artificial-intelligence/agentic-rag-that-knows-when-facts-expire-and-pays-only-for-the-context-it-needs-3402793bf2d6">Agentic RAG That Knows When Facts Expire</a></li>
+            </ul>
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Tulip23/tulip_5.JPG" class="img-fluid" alt="">
-            </div>
+          <div class="aside-block">
+            <h4>Built with</h4>
+            <p class="stack-line">
+              Python · Pydantic · ReAct · State machines · LLM-as-judge ·
+              GitHub Actions · pytest · Streamlit · Anthropic API · Tavily
+            </p>
           </div>
-
-
-
-
-           <!-- Great Ocean Road -->
-           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/GOR24/GOR_1.JPG" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/GOR24/GOR_2.JPG" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/GOR24/GOR_3.JPG" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/GOR24/GOR_4.JPG" class="img-fluid" alt="">
-            </div>
-          </div>
-
-
-         
-
-        </div>
-        <p>Click <a href="memories.html">here</a> for memories.</p>
-
-
-        
-
+        </aside>
       </div>
-    </section><!-- End Portfolio Section -->
+    </article>
 
- 
+    <!-- ---------------- 02 AssessAuto ---------------- -->
+    <article class="case reveal">
+      <header class="case-head">
+        <p class="eyebrow">Case study 02 — Vision × agentic</p>
+        <h3>AssessAuto</h3>
+        <p class="hook">One AI guesses the car damage. A multi-agent team over MCP proves it.</p>
+      </header>
 
+      <div class="case-body">
+        <div class="case-main">
+          <p>
+            A single model asked to look at a damaged car and produce a price is
+            making one unverifiable guess. AssessAuto is a multi-agent vision
+            system that refuses to do that: every capability — detection,
+            description, severity, price, fraud — is a separate, individually
+            inspectable tool, so an assessment becomes a chain of typed steps you
+            can replay rather than one opaque answer.
+          </p>
+          <p>
+            It is the clearest demonstration of what the agentic discipline in
+            case study 01 buys you once the input is an image rather than text: a
+            vision pipeline where every hop is typed, routed on demand, and
+            recorded. The architecture has precedent in my earlier vehicle damage
+            research; this is a clean, general-purpose rebuild of it.
+          </p>
+          <ul>
+            <li><strong>A LangGraph supervisor</strong> running a ReAct loop and acting as a pure MCP client — it never calls any model directly</li>
+            <li><strong>An MCP server exposing five tools</strong>, each a distinct model capability: <code>detect_damage</code> boxes the damage with a GroundingDINO + SAM detector on SageMaker; <code>describe_damage</code> annotates those regions and returns a typed per-region assessment; <code>score_severity</code> normalises it to a consistent 0–100 scale; <code>estimate_price</code> gives an AUD range with a repair-versus-replace call; and <code>flag_fraud</code> cross-checks the detector's regions against the description for inconsistencies. The last four are Claude on Amazon Bedrock.</li>
+            <li><strong>Typed hand-offs</strong> between every agent step, never free text</li>
+            <li><strong>Dual memory</strong> — a thread checkpointer for the live conversation and DynamoDB behind it, so follow-up questions don't need the photo re-uploaded</li>
+            <li><strong>A replayable trajectory</strong> via OpenTelemetry-style spans</li>
+            <li><strong>Selective invocation</strong> — the supervisor only invokes the tools a given question actually needs: a narrow "what damage is visible?" stops after <code>describe_damage</code>, while a full assessment runs the whole chain</li>
+          </ul>
 
+          <div class="metric metric--facts">
+            <div class="fact">
+              <span class="k">5 tools</span>
+              <span class="v">each a distinct model capability, separately inspectable</span>
+            </div>
+            <div class="fact">
+              <span class="k">Typed</span>
+              <span class="v">every hand-off, never free text</span>
+            </div>
+            <div class="fact">
+              <span class="k">Replayable</span>
+              <span class="v">OpenTelemetry-style spans for the whole run</span>
+            </div>
+          </div>
 
+          <figure class="case-figure">
+            <a class="fig-zoom" href="assets/img/figures/assessauto-architecture.png" target="_blank" rel="noopener">
+            <img src="assets/img/figures/assessauto-architecture.png" alt="AssessAuto architecture: a LangGraph supervisor with a thread checkpointer and DynamoDB memory acts as a pure MCP client, calling one MCP server that exposes five tools — detect_damage on SageMaker, and describe_damage, score_severity, estimate_price and flag_fraud on Claude via Bedrock."
+                 width="1800" height="1011" loading="lazy" decoding="async">
+            </a>
+            <figcaption><b>The supervisor never calls a model directly.</b> Every capability is an MCP tool, so each can be inspected, swapped or tested on its own. Only <code>detect_damage</code> runs on SageMaker; the four reasoning tools are Claude on Bedrock.</figcaption>
+          </figure>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-
-      
-
-
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
+          <figure class="case-figure">
+            <a class="fig-zoom" href="assets/img/figures/assessauto-assessment.jpg" target="_blank" rel="noopener">
+            <img src="assets/img/figures/assessauto-assessment.jpg" alt="A full AssessAuto run: the detector boxes a shattered windshield in purple, and the agents return an overall condition of SEVERE at 88 out of 100, notable damage including a deployed airbag, an AUD repair estimate broken down by cost driver, a consistency check finding no fraud indicators, and a plain-language recommendation."
+                 width="1000" height="1727" loading="lazy" decoding="async">
+            </a>
+            <figcaption><b>One photo in, the whole chain out.</b> Detection, severity, an itemised AUD estimate, a consistency check and a recommendation — with the agent trajectory expandable underneath. Sample photo from the public <a href="https://cardd-ustc.github.io/">CarDD dataset</a>.</figcaption>
+          </figure>
         </div>
-        <div class="email">
-          <i class="icofont-envelope"> <span><a href="mailto:jahidnoyon36@gmail.com?Subject=Hello" target="_blank">jahidnoyon36@gmail.com</a></span></i>
-          <i class="icofont-envelope"> <span><a href="mailto:s3952007@student.rmit.edu.au?Subject=Hello" target="_blank">s3952007@student.rmit.edu.au</a></span></i>
+
+        <aside class="case-aside">
+          <div class="aside-block">
+            <h4>Repository</h4>
+            <ul>
+              <li><a class="chip" href="https://github.com/HelloJahid/AssessAuto">AssessAuto <span class="arw">↗</span></a></li>
+            </ul>
+          </div>
+          <div class="aside-block">
+            <h4>Written up in</h4>
+            <ul>
+              <li><a href="https://medium.com/@hellojahid/one-ai-guesses-the-car-damage-a-multi-agent-team-over-mcp-proves-it-b31bf02c1d07">One AI Guesses the Car Damage</a></li>
+            </ul>
+          </div>
+          <div class="aside-block">
+            <h4>Built with</h4>
+            <p class="stack-line">
+              LangGraph · MCP · Claude on Amazon Bedrock · Amazon SageMaker ·
+              GroundingDINO · SAM · OpenTelemetry-style tracing · Python
+            </p>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <!-- ---------------- 03 CICDAgent ---------------- -->
+    <article class="case reveal">
+      <header class="case-head">
+        <p class="eyebrow">Case study 03 — Agentic × the AAM domain</p>
+        <h3>CICDAgent — Route Demand Assistant</h3>
+        <p class="hook">An agent that cannot be deployed does not count.</p>
+      </header>
+
+      <div class="case-body">
+        <div class="case-main">
+          <p>
+            A CI/CD pipeline whose centrepiece deploys an AWS Bedrock agent that
+            estimates daily passenger demand on Australian routes. The choice of
+            payload is deliberate, not incidental: it's the same
+            demand-characterisation question as the Advanced Air Mobility work at
+            the top of this page, shipped as production infrastructure — agentic
+            engineering applied back onto my own research domain.
+          </p>
+          <ul>
+            <li><strong>CI</strong> (<code>ci.yaml</code>, on pull requests to main) — lint and test in parallel, then build plus a Trivy vulnerability scan that fails on fixable HIGH or CRITICAL findings. No deploy.</li>
+            <li><strong>CD</strong> (<code>cd.yaml</code>, on merge to main) — re-runs lint and test, builds a git-SHA-tagged image, pushes to ECR, deploys to staging with a smoke test, pauses for <strong>manual approval</strong>, deploys to production with a smoke test, then posts a Slack notification</li>
+            <li><strong>Keyless AWS auth</strong> via GitHub OIDC — no long-lived credentials anywhere in the pipeline</li>
+            <li><strong>All infrastructure in Terraform</strong>, removable with a single <code>terraform destroy</code></li>
+            <li><strong>Ships to AWS Lambda</strong> as a container image via the Lambda Web Adapter, exposed through a public Function URL</li>
+          </ul>
+
+          <div class="metric metric--facts">
+            <div class="fact">
+              <span class="k">Keyless</span>
+              <span class="v">GitHub OIDC — no long-lived credentials anywhere</span>
+            </div>
+            <div class="fact">
+              <span class="k">Gated</span>
+              <span class="v">Trivy scan, then manual approval before production</span>
+            </div>
+            <div class="fact">
+              <span class="k">Reversible</span>
+              <span class="v">all infrastructure removable with one terraform destroy</span>
+            </div>
+          </div>
+
+          <figure class="case-figure">
+            <a class="fig-zoom" href="assets/img/figures/cicdagent-pipeline.png" target="_blank" rel="noopener">
+            <img src="assets/img/figures/cicdagent-pipeline.png" alt="The CICDAgent pipeline. CI on pull requests runs ruff and pytest in parallel, then builds the image and scans it with Trivy, and never deploys. CD on push to main lints, tests, builds and pushes a SHA-tagged image to ECR, deploys to staging, smoke tests, waits for manual approval, deploys to production, smoke tests, then notifies Slack. Any job failing posts a separate Slack alert."
+                 width="1560" height="1300" loading="lazy" decoding="async">
+            </a>
+            <figcaption><b>Generated from the actual workflow files</b> in the repo, not sketched. The amber gate is a GitHub Environment with a required reviewer — production cannot ship without a human. The one image built at the start is the same digest promoted to both environments.</figcaption>
+          </figure>
         </div>
-        <ul class="social-icons">
-          <a href="https://www.linkedin.com/in/hellojahid/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/hellojahid/" class="google-plus" target="_blank"><i class="bx bxl-github"></i></a>
-          <!-- <a href="https://www.instagram.com/satheesh22g/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a> -->
-          <a href="https://www.facebook.com/xyz22abc" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.youtube.com/@MachineLearningTalksTips" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>  
+
+        <aside class="case-aside">
+          <div class="aside-block">
+            <h4>Repository</h4>
+            <ul>
+              <li><a class="chip" href="https://github.com/HelloJahid/CICDAgent">CICDAgent <span class="arw">↗</span></a></li>
+            </ul>
+          </div>
+          <div class="aside-block">
+            <h4>Built with</h4>
+            <p class="stack-line">
+              GitHub Actions · Terraform · Docker · AWS Lambda · Amazon ECR ·
+              AWS Bedrock · GitHub OIDC · Trivy · Slack
+            </p>
+          </div>
+          <div class="aside-block">
+            <h4>Also demonstrates</h4>
+            <p class="stack-line">
+              The Machine Learning DevOps Engineer credential below.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <!-- ---------------- 04 Vision-language arc ---------------- -->
+    <article class="case reveal">
+      <header class="case-head">
+        <p class="eyebrow">Case study 04 — Vision-language research</p>
+        <h3>From detection to a deployed vision-language system</h3>
+        <p class="hook">Built the model, then built the benchmark that proves it.</p>
+      </header>
+
+      <div class="case-body">
+        <div class="case-main">
+          <p>
+            The through-line of an industry-embedded PhD, jointly supervised by
+            RMIT University and Carsales.com Ltd and awarded in May 2026. The
+            problem stayed constant — assess vehicle damage from an image,
+            accurately enough to act on — while the method progressed from
+            attention-based classification, through text-guided grounding, to an
+            end-to-end vision-language model producing structured output. The
+            last step went into production; a separate published benchmark
+            exists to keep its claims honest.
+          </p>
+
+          <div class="chapter">
+            <p class="chapter-label"><span class="n">01</span> · Detection</p>
+            <h4>CarDNet</h4>
+            <p class="q">Can attention tell real damage from a reflection?</p>
+            <p>
+              A CNN-attention car damage classification network proposing a
+              <strong>Convolutional Attention Module</strong>: parallel channel
+              and spatial attention sub-modules inserted after each residual
+              block in a ResNet50 backbone. Channel attention decides what to
+              focus on, spatial attention decides where — together they separate
+              real damage from artefacts like reflections and shadows.
+            </p>
+            <ul>
+              <li><strong>Dataset</strong> — a curated, annotated, balanced set combining private Carsales data with the public CarDD dataset, augmented to 5,000+ images per class across six categories: dent, scratch, glass shatter, tyre flat, lamp broken, no damage</li>
+              <li><strong>Benchmarking</strong> — ResNet50 + CAM against VGG16 and DenseNet121 backbones, and against eight state-of-the-art attention mechanisms (SENet, SRM, Gate, GCNet, CCNet, BAM, Coordinate, SPNet), with ablation studies isolating the channel and spatial contributions</li>
+            </ul>
+          </div>
+
+          <div class="chapter">
+            <p class="chapter-label"><span class="n">02</span> · Grounding</p>
+            <h4>GroundingCarDD</h4>
+            <p class="q">Can a description locate the damage it describes?</p>
+            <p>
+              Text-guided multimodal phrase grounding for car damage detection,
+              fusing visual and textual signals to localise damage precisely from
+              natural-language descriptions, and outperforming baselines on mAP
+              and recall. Published in <em>IEEE Access</em>, vol. 12,
+              pp. 179464–179477, 27 November 2024.
+            </p>
+          </div>
+
+          <div class="chapter">
+            <p class="chapter-label"><span class="n">03</span> · Production</p>
+            <h4>CarDVLM</h4>
+            <p class="q">Can it produce something a business can act on?</p>
+            <p>
+              The PhD's flagship contribution and the system that shipped. An
+              end-to-end vision-language model combining object detection with
+              structured reasoning to output <strong>damage type, location and
+              severity</strong> — evaluated on both structured accuracy and
+              semantic quality, and reported as achieving state-of-the-art
+              performance. It was scaled into production on AWS with Metaflow
+              inference workflows.
+            </p>
+
+            <div class="metric metric--pair">
+              <div>
+                <div class="figure">20→6</div>
+                <div class="label">
+                  minutes per automated assessment
+                  <small>in production, after deployment</small>
+                </div>
+              </div>
+              <div>
+                <div class="figure">1.4×</div>
+                <div class="label">
+                  operational throughput
+                  <small>versus the prior workflow</small>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="chapter">
+            <p class="chapter-label"><span class="n">04</span> · Evaluation</p>
+            <h4>CarDamageEval</h4>
+            <p class="q">How would anyone check a claim like that?</p>
+            <p>
+              A benchmark framework for evaluating car damage assessment with
+              vision-language models, using a <strong>dual-layer evaluation
+              approach</strong> that measures structured accuracy and semantic
+              quality together. It proposes a hybrid <strong>CarDD_Score</strong>
+              metric and validates it against a curated annotated dataset with
+              baseline experiments. Published in the proceedings of AusDM'25, the
+              23rd Australasian Data Science and Machine Learning Conference.
+            </p>
+            <p>
+              This is the same instinct as the agentic track, arrived at from the
+              other direction: the model and the thing that grades the model are
+              two halves of one piece of work.
+            </p>
+          </div>
+
+          <p class="note">
+            <b>On code availability.</b> CarDNet has a full public repository.
+            GroundingCarDD and CarDVLM do not — the implementation is
+            industry-owned, so those are published as papers and project pages
+            rather than source. The CarDamageEval repository exists but its
+            README is still a placeholder. Links below reflect exactly that.
+          </p>
+        </div>
+
+        <aside class="case-aside">
+          <div class="aside-block">
+            <h4>Code</h4>
+            <ul>
+              <li><a class="chip" href="https://github.com/HelloJahid/CarDNet">CarDNet repo <span class="arw">↗</span></a></li>
+              <li><a class="chip" href="https://github.com/HelloJahid/phd-research-project-pages">Project pages hub <span class="arw">↗</span></a></li>
+            </ul>
+          </div>
+          <div class="aside-block">
+            <h4>Papers &amp; project pages</h4>
+            <ul>
+              <li><a href="https://hellojahid.github.io/paper/groundingcardd/groundingcardd.html">GroundingCarDD — project page</a></li>
+              <li><a href="https://doi.org/10.1109/ACCESS.2024.3506563">GroundingCarDD — IEEE Access</a></li>
+              <li><a href="https://hellojahid.github.io/paper/cardvlm/cardvlm.html">CarDVLM — project page</a></li>
+              <li><a href="https://hellojahid.github.io/paper/cardamageeval/cardamageeval.html">CarDamageEval — project page</a></li>
+            </ul>
+          </div>
+          <div class="aside-block">
+            <h4>Built with</h4>
+            <p class="stack-line">
+              PyTorch · ResNet50 · VGG16 · DenseNet121 · Vision-language models ·
+              Object detection · AWS · Metaflow
+            </p>
+          </div>
+          <div class="aside-block">
+            <h4>Funded by</h4>
+            <p class="stack-line">
+              Industry Grant, RMIT–Carsales (PRJ00000694) — supported the
+              development of GroundingCarDD and CarDVLM.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========================== TECH STACK ========================== -->
+<section class="section" id="stack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Tech stack</p>
+      <h2>What I actually work in</h2>
+      <p class="lede">
+        Current tooling only. Every item below appears somewhere in the work
+        above — nothing here is listed on the strength of having read about it.
+      </p>
+    </div>
+
+    <div class="stack reveal">
+      <div class="stack-group">
+        <h3>Agentic &amp; LLM engineering</h3>
+        <ul>
+          <li>LangChain</li>
+          <li>LangGraph</li>
+          <li>Claude Agent SDK</li>
+          <li>Model Context Protocol (MCP)</li>
+          <li>Multi-agent orchestration</li>
+          <li>RAG &amp; agentic RAG</li>
+          <li>LLM-as-judge evaluation</li>
+          <li>Pydantic</li>
+          <li>FastAPI</li>
         </ul>
-        <!-- <a target="_blank" href="https://scholar.google.com/citations?user=7gQWnDMAAAAJ&hl=en">Google Scholar</a> -->
-
-            
-
       </div>
-    
+      <div class="stack-group">
+        <h3>AI / ML</h3>
+        <ul>
+          <li>Computer vision</li>
+          <li>Multimodal AI</li>
+          <li>LLMs &amp; VLMs</li>
+          <li>LLM fine-tuning</li>
+          <li>PyTorch</li>
+          <li>TensorFlow</li>
+          <li>Scikit-learn</li>
+          <li>Data science</li>
+        </ul>
+      </div>
+      <div class="stack-group">
+        <h3>Big data &amp; geospatial</h3>
+        <ul>
+          <li>PySpark</li>
+          <li>Apache Sedona</li>
+          <li>Parquet</li>
+          <li>Distributed geospatial processing</li>
+          <li>Origin–destination modelling</li>
+        </ul>
+      </div>
+      <div class="stack-group">
+        <h3>Cloud &amp; MLOps</h3>
+        <ul>
+          <li>AWS — EC2, EMR, Athena</li>
+          <li>Amazon SageMaker</li>
+          <li>Amazon Bedrock</li>
+          <li>AWS Lambda &amp; ECR</li>
+          <li>Docker</li>
+          <li>GitHub Actions &amp; CI/CD</li>
+          <li>Metaflow</li>
+          <li>MLflow</li>
+          <li>DVC</li>
+        </ul>
+      </div>
+      <div class="stack-group">
+        <h3>Research practice</h3>
+        <ul>
+          <li>Benchmark dataset curation</li>
+          <li>Evaluation framework design</li>
+          <li>Ablation studies</li>
+          <li>Systematic literature review</li>
+          <li>Explainable AI (GradCAM)</li>
+          <li>Peer-reviewed publication</li>
+          <li>Research supervision</li>
+        </ul>
+      </div>
+      <div class="stack-group">
+        <h3>Programming</h3>
+        <ul>
+          <li>Python</li>
+          <li>TypeScript</li>
+          <li>SQL</li>
+          <li>Pandas</li>
+          <li>Git</li>
+          <li>pytest</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CREDENTIALS ========================== -->
+<section class="section" id="credentials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Certifications &amp; credentialed projects</p>
+      <h2>Certified, and built</h2>
+      <p class="lede">
+        Each credential is paired with the open-source project that demonstrates
+        it in practice. Where that project is one of the case studies above, the
+        link goes there rather than repeating it.
+      </p>
+    </div>
+
+    <div class="cred reveal">
+      <div class="cred-item">
+        <p class="meta">Udacity Nanodegree</p>
+        <h3>Agentic AI Engineer with LangChain &amp; LangGraph</h3>
+        <p class="covers">
+          LangGraph agent orchestration, retrieval-augmented generation,
+          human-in-the-loop workflows, multi-agent architecture and routing.
+        </p>
+        <p class="proof">
+          Demonstrated in → <a href="https://github.com/HelloJahid/udahub_solution">UDA-Hub</a>
+        </p>
+      </div>
+
+      <div class="cred-item">
+        <p class="meta">Udacity Nanodegree</p>
+        <h3>Agentic AI</h3>
+        <p class="covers">
+          Agent workflows and orchestration patterns, tool calling, state and
+          memory management, multi-agent routing, agentic RAG with evaluation
+          loops.
+        </p>
+        <p class="proof">
+          Demonstrated in → <a href="#work">AgentProof, case study 01</a>
+        </p>
+      </div>
+
+      <div class="cred-item">
+        <p class="meta">Udacity Nanodegree</p>
+        <h3>Machine Learning DevOps Engineer</h3>
+        <p class="covers">
+          Production ML pipelines, automated retraining, drift monitoring,
+          CI/CD, and API deployment with FastAPI, MLflow and GitHub Actions.
+        </p>
+        <p class="proof">
+          Demonstrated in → <a href="#work">CICDAgent, case study 03</a>
+        </p>
+      </div>
+
+      <div class="cred-item">
+        <p class="meta">Udacity Nanodegree</p>
+        <h3>Data Scientist</h3>
+        <p class="covers">
+          CRISP-DM, ML pipelines with NLP, recommendation systems, and software
+          engineering practice for data science.
+        </p>
+        <p class="proof">
+          Demonstrated in → <a href="#work">PromptProof, case study 01</a>
+        </p>
+      </div>
+    </div>
+
+    <p class="chiprow reveal mt-2">
+      <a class="chip" href="https://www.udacity.com/certificate/e/912f8d70-7aa1-11f1-a7f9-f7292e7518cd">Verify — Agentic AI <span class="arw">↗</span></a>
+      <a class="chip" href="https://www.udacity.com/certificate/e/3b10f85e-734c-11f1-8258-33f7251fa802">Verify — ML DevOps &amp; Data Scientist <span class="arw">↗</span></a>
+      <a class="chip" href="https://www.linkedin.com/in/hellojahid/details/certifications/">All certifications <span class="arw">↗</span></a>
+    </p>
+
+    <div class="coursework reveal">
+      <p class="eyebrow eyebrow--muted">The proof projects, in brief</p>
+      <div class="record record--plain">
+        <div>
+          <h4>UDA-Hub</h4>
+          <ul>
+            <li>
+              A Universal Decision Agent for customer support: a LangGraph
+              multi-agent system that reads, reasons, routes and resolves
+              tickets end to end. <b>Supervisor pattern</b> across six agents —
+              classifier, supervisor, knowledge, resolver, escalation, memory —
+              with the <code>StateGraph</code> built from scratch and no prebuilt
+              agent constructors. A Pydantic <code>TicketClassification</code>
+              schema drives deterministic, fully logged routing; RAG sits behind
+              an <b>escalation gate</b> so low retrieval confidence hands off to
+              a human rather than answering ungrounded; and memory is three-tier
+              — typed run state, thread checkpointing, and long-term
+              cross-session memory in SQLAlchemy. Modelled on a first client
+              account, "CultPass," and tested against nine cases covering both
+              resolution and escalation.
+              <a href="https://github.com/HelloJahid/udahub_solution">Repo ↗</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>Other coursework</h4>
+          <ul>
+            <li>
+              <b>EcoHome Energy Advisor</b> — an energy optimisation agent
+              combining weather-forecast integration to predict solar
+              generation, time-of-day dynamic pricing, historical usage
+              analysis, and a RAG pipeline for energy-saving tips across EVs,
+              HVAC, appliances and solar.
+              <a href="https://github.com/HelloJahid/ecohome_solution">Repo ↗</a>
+            </li>
+            <li>
+              <b>Document Assistant</b> — a LangChain and LangGraph multi-agent
+              document processor routing between Q&amp;A, summarisation and
+              calculation agents over financial and healthcare documents, with
+              Pydantic schemas for intent classification and answer structure.
+              <a href="https://github.com/HelloJahid/doc_assistant_project">Repo ↗</a>
+            </li>
+            <li>
+              <b>LLM exercises</b> — a learning repository of small, focused
+              exercises. Listed for completeness rather than as original work:
+              it is inspired by, and in places directly adapted from, Ed
+              Donner's MIT-licensed <code>llm_engineering</code> course
+              materials, with the original licence notices retained.
+              <a href="https://github.com/HelloJahid/llm-playground">Repo ↗</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== RESEARCH ============================ -->
+<section class="section" id="research">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Research &amp; publications</p>
+      <h2>The peer-reviewed record</h2>
+      <p class="lede">
+        The credibility layer under the work above. Five first-authored
+        publications during the PhD, including three Scimago Q1 journal papers,
+        plus collaborative work in biomedical imaging.
+      </p>
+    </div>
+
+    <div class="scholar-stats reveal">
+      <div class="stat"><span class="n">500+</span><span class="k">Citations</span></div>
+      <div class="stat"><span class="n">12</span><span class="k">h-index</span></div>
+      <div class="stat"><span class="n">14</span><span class="k">i10-index</span></div>
+      <div class="stat stat--action">
+        <a class="chip" href="https://scholar.google.com/citations?user=7gQWnDMAAAAJ&amp;hl">Google Scholar <span class="arw">↗</span></a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <article class="pub">
+        <div class="year">2025</div>
+        <div>
+          <h3>CarDamageEval: Benchmark Evaluation of Car Damage Assessment Using Vision Language Models</h3>
+          <p class="authors">Hasan, M.J., Jahani, H., Boo, Y.L., Ong, K.L.</p>
+          <p class="venue">Proceedings of AusDM'25 — 23rd Australasian Data Science and Machine Learning Conference</p>
+          <p><a class="chip" href="https://hellojahid.github.io/paper/cardamageeval/cardamageeval.html">Project page <span class="arw">↗</span></a></p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="year">2025</div>
+        <div>
+          <h3>Vehicle Damage Detection Using Artificial Intelligence: A Systematic Literature Review</h3>
+          <p class="authors">Hasan, M.J., Nguyen, K.C., Jahani, H., Boo, Y.L., Ong, K.L.</p>
+          <p class="venue">
+            WIREs Data Mining and Knowledge Discovery, 15: e70027
+            <span class="q">Scimago Q1 · IF 11.7</span>
+          </p>
+          <p><a class="chip" href="https://doi.org/10.1002/widm.70027">10.1002/widm.70027 <span class="arw">↗</span></a></p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="year">2025</div>
+        <div>
+          <h3>Enhancing Brain Tumor Classification with a Novel Attention Based Explainable Deep Learning Framework</h3>
+          <p class="authors">Hasan, M.J., Hasan, M., Akter, S., Mahi, A.B.S., Uddin, M.P.</p>
+          <p class="venue">
+            Biomedical Signal Processing and Control, Vol. 112
+            <span class="q">Scimago Q1 · IF 4.9</span>
+          </p>
+          <p class="pub-note">
+            SSPANet — combining Z-pool channel attention, strip pooling for
+            long-range spatial context, and style pooling for fine-grained
+            texture awareness, integrated with VGG16 and ResNet50 backbones and
+            made explainable via GradCAM, GradCAM++ and EigenGradCAM. ResNet50 +
+            SSPANet reports 97% accuracy, precision, recall and F1, with 95%
+            Cohen's Kappa and Matthews Correlation Coefficient, on the Figshare
+            Brain Tumor Dataset (3,064 T1-weighted contrast-enhanced MRI images,
+            233 patients, three tumour classes).
+          </p>
+          <p class="chiprow">
+            <a class="chip" href="https://doi.org/10.1016/j.bspc.2025.108636">10.1016/j.bspc.2025.108636 <span class="arw">↗</span></a>
+            <a class="chip" href="https://github.com/HelloJahid/SSPANet">Code <span class="arw">↗</span></a>
+            <a class="chip" href="https://hellojahid.github.io/paper/sspanet/sspanet.html">Project page <span class="arw">↗</span></a>
+          </p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="year">2024</div>
+        <div>
+          <h3>GroundingCarDD: Text-Guided Multimodal Phrase Grounding for Car Damage Detection</h3>
+          <p class="authors">Hasan, M.J., Nalwan, A., Ong, K.L., Jahani, H., Boo, Y.L., Nguyen, K.C.</p>
+          <p class="venue">
+            IEEE Access, vol. 12, pp. 179464–179477
+            <span class="q">Scimago Q1</span>
+          </p>
+          <p class="chiprow">
+            <a class="chip" href="https://doi.org/10.1109/ACCESS.2024.3506563">10.1109/ACCESS.2024.3506563 <span class="arw">↗</span></a>
+            <a class="chip" href="https://hellojahid.github.io/paper/groundingcardd/groundingcardd.html">Project page <span class="arw">↗</span></a>
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div class="roles reveal">
+      <p class="eyebrow">Teaching &amp; supervision</p>
+      <h3 class="roles-h">Four teaching and supervisory roles at RMIT</h3>
+      <p class="lede roles-lede">
+        Alongside the research: supervising applied aviation projects, and
+        teaching the analytics and infrastructure courses that feed into them.
+      </p>
+
+      <article class="role-item">
+        <div class="role-rail">
+          <p class="meta">Supervision</p>
+          <p class="meta role-when">Commencing 2026</p>
+        </div>
+        <div class="role-body">
+          <h4>Postgraduate Research Co-Supervisor</h4>
+          <p class="role-where">Aviation Master's Program · RMIT University</p>
+          <p>
+            Co-supervising a postgraduate research project applying AI methods to
+            a real-world aviation challenge, within a joint supervisory team.
+          </p>
+        </div>
+      </article>
+
+      <article class="role-item">
+        <div class="role-rail">
+          <p class="meta">Supervision</p>
+          <p class="meta role-when">5 groups · ~20 students</p>
+        </div>
+        <div class="role-body">
+          <h4>Group Supervisor, Aviation Industry Project</h4>
+          <p class="role-where">Course 2650 · RMIT University</p>
+          <p>
+            Supervising five student research groups, around twenty students,
+            through applied research projects addressing real-world aviation
+            industry challenges.
+          </p>
+        </div>
+      </article>
+
+      <article class="role-item">
+        <div class="role-rail">
+          <p class="meta">Teaching</p>
+          <p class="meta role-when">ISYS3449</p>
+        </div>
+        <div class="role-body">
+          <h4>Teaching Assistant, Advanced Business Analytics</h4>
+          <p class="role-where">RMIT University</p>
+          <p>
+            Delivered tutorials and workshops on data preparation, visualisation
+            and machine learning methods using Python and AI Studio, guiding
+            students through model development, evaluation and advanced analytics
+            topics.
+          </p>
+        </div>
+      </article>
+
+      <article class="role-item">
+        <div class="role-rail">
+          <p class="meta">Teaching</p>
+          <p class="meta role-when">INTE2043</p>
+        </div>
+        <div class="role-body">
+          <h4>Teaching Assistant, Business IT Infrastructure</h4>
+          <p class="role-where">RMIT University</p>
+          <p>
+            Facilitated labs on IT infrastructure and cloud systems — Linux
+            administration, networking and server deployment — and introduced
+            advanced topics including virtualisation, containers, IoT and APIs.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div class="record reveal">
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li>
+            <b>PhD in Business Information Systems</b> — RMIT University,
+            Sep 2022 – May 2026, awarded May 2026. An industry-embedded programme
+            jointly supervised by RMIT and Carsales.com Ltd, advancing multimodal
+            AI for intelligent vehicle assessment.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Grants &amp; funding</h3>
+        <ul>
+          <li><b>Industry Grant, RMIT–Carsales (PRJ00000694)</b> — supported development of GroundingCarDD and CarDVLM.</li>
+          <li><b>RACE AWS Merit Allocation Scheme</b> — four consecutive rounds of AWS cloud computing credits, Jan 2025 – Dec 2026, supporting large-scale data preparation, model training and multi-agent system development.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Recognition</h3>
+        <ul>
+          <li><b>PhD HDR Certificate of Excellence</b>, RMIT University, 2025.</li>
+          <li><b>Elected HDR Candidate Representative</b>, College of Business and Law, RMIT University.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== WRITING ============================ -->
+<section class="section" id="writing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Writing</p>
+      <h2>The build-in-public trail</h2>
+      <p class="lede">
+        Eight posts written as the agentic work shipped, in order. Each one is
+        paired with the code it describes, so the argument and the
+        implementation can be read against each other.
+      </p>
+    </div>
+
+    <div class="trail reveal">
+      <article class="post">
+        <div class="idx">01</div>
+        <div>
+          <h3><a href="https://medium.com/towards-artificial-intelligence/clever-prompts-are-cheap-now-reliable-llm-prompting-systems-are-the-skill-4229e147ebaf">Clever Prompts Are Cheap Now. Reliable LLM Prompting Systems Are the Skill.</a></h3>
+          <p class="post-meta">27 Jun 2026 · Towards AI</p>
+          <p class="gloss">The ideas behind dependable AI prompting, laid out before building anything.</p>
+          <p><a class="chip" href="https://github.com/HelloJahid/Agentic-AI">Study notes <span class="arw">↗</span></a></p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="idx">02</div>
+        <div>
+          <h3><a href="https://medium.com/towards-artificial-intelligence/your-llm-lies-confidently-i-built-an-engine-that-doesnt-2154b4857d59">Your LLM Lies Confidently. I Built an Engine That Doesn't.</a></h3>
+          <p class="post-meta">29 Jun 2026 · Towards AI</p>
+          <p class="gloss">Building the self-correcting PromptProof engine.</p>
+          <p><a class="chip" href="https://github.com/HelloJahid/PromptProof">PromptProof <span class="arw">↗</span></a></p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="idx">03</div>
+        <div>
+          <h3><a href="https://medium.com/towards-artificial-intelligence/building-an-agent-is-cheap-now-proving-it-works-is-the-skill-35bd2a5f62e9">An Agent You Cannot Watch Is an Agent You Cannot Trust.</a></h3>
+          <p class="post-meta">10 Jul 2026 · Towards AI</p>
+          <p class="gloss">The AgentProof runtime and its flight-recorder design.</p>
+          <p><a class="chip" href="https://github.com/HelloJahid/AgentProof">AgentProof <span class="arw">↗</span></a></p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="idx">04</div>
+        <div>
+          <h3><a href="https://medium.com/towards-artificial-intelligence/building-an-agent-is-cheap-now-proving-it-works-is-the-skill-1376cba13160">Building an Agent Is Cheap Now. Proving It Works Is the Skill.</a></h3>
+          <p class="post-meta">11 Jul 2026 · Towards AI</p>
+          <p class="gloss">Grading recorded agent runs across four quality dimensions with an LLM-as-judge.</p>
+          <p><a class="chip" href="https://github.com/HelloJahid/AgentProof">AgentProof <span class="arw">↗</span></a></p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="idx">05</div>
+        <div>
+          <h3><a href="https://medium.com/towards-artificial-intelligence/from-one-agent-to-the-claude-agent-sdk-8076a5c54a89">From One Agent to the Claude Agent SDK</a></h3>
+          <p class="post-meta">17 Jul 2026 · Towards AI</p>
+          <p class="gloss">The progression from a single agent up to the Claude Agent SDK.</p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="idx">06</div>
+        <div>
+          <h3><a href="https://medium.com/towards-artificial-intelligence/agentic-rag-that-knows-when-facts-expire-and-pays-only-for-the-context-it-needs-3402793bf2d6">Agentic RAG That Knows When Facts Expire, and Pays Only for the Context It Needs</a></h3>
+          <p class="post-meta">Jul 2026 · Towards AI</p>
+          <p class="gloss">The GroundProof writeup — stale-fact handling and context-cost efficiency in RAG. This is where the 62% figure comes from.</p>
+          <p><a class="chip" href="https://github.com/HelloJahid/GroundProof">GroundProof <span class="arw">↗</span></a></p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="idx">07</div>
+        <div>
+          <h3><a href="https://medium.com/@hellojahid/one-ai-guesses-the-car-damage-a-multi-agent-team-over-mcp-proves-it-b31bf02c1d07">One AI Guesses the Car Damage. A Multi-Agent Team Over MCP Proves It.</a></h3>
+          <p class="post-meta">Jul 2026 · hellojahid</p>
+          <p class="gloss">The AssessAuto writeup — a multi-agent system producing a condition report, repair estimate and fraud check from a single damage photo.</p>
+          <p><a class="chip" href="https://github.com/HelloJahid/AssessAuto">AssessAuto <span class="arw">↗</span></a></p>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="idx">08</div>
+        <div>
+          <h3><a href="https://medium.com/towards-artificial-intelligence/how-ai-engineering-keeps-renaming-itself-the-evolution-of-ai-engineering-from-prompt-to-graph-3be81a8852cd">How AI Engineering Keeps Renaming Itself: The Evolution of AI Engineering, From Prompt to Graph</a></h3>
+          <p class="post-meta">27 Jul 2026 · Towards AI</p>
+          <p class="gloss">A retrospective on how the field's terminology has shifted over four years.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="other-writing reveal">
+      <p class="eyebrow eyebrow--muted">Other writing</p>
+      <div class="record record--plain">
+        <div>
+          <ul>
+            <li>
+              <b><a href="https://medium.com/towards-artificial-intelligence/your-models-numbers-just-changed-git-never-noticed-d40025306e50">Git Tracks Your Code. Something Has to Track Your Data. Meet DVC</a></b><br>
+              1 Jul 2026 · Towards AI — a hands-on data version control walkthrough using a wine-quality model.
+              <a href="https://github.com/HelloJahid/dvc-ml-pipeline">Repo ↗</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <b><a href="https://medium.com/@hellojahid/the-salary-question-every-developer-googles-answered-with-65-000-data-points-7c2861cdb01a">The Salary Question Every Developer Googles — Answered with 65,000 Data Points</a></b><br>
+              5 Jul 2026 · hellojahid — an analysis of the 2024 Stack Overflow developer survey.
+              <a href="https://github.com/HelloJahid/stackoverflow-2024-salary-analysis">Repo ↗</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-1">
+        <a class="chip" href="https://medium.com/@hellojahid">All posts on Medium <span class="arw">↗</span></a>
+      </p>
+    </div>
+  </div>
+</section>
 
 
-      
-  </main><!-- End #main -->
+<!-- =========================== CONTACT ============================ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Open to applied AI research and agentic engineering roles</h2>
+      <p class="lede">
+        Melbourne, Australia. Happy to talk about agentic systems, multi-agent
+        workflows, vision-language models, or geospatial analytics at scale.
+      </p>
 
-  <!-- ======= Footer ======= -->
-<!-- End  Footer -->
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="k">Work email</span>
+          <span class="v"><a href="mailto:md.jahid.hasan@rmit.edu.au">md.jahid.hasan@rmit.edu.au</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="k">Personal email</span>
+          <span class="v"><a href="mailto:jahid2rmit@gmail.com">jahid2rmit@gmail.com</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="k">Curriculum vitae</span>
+          <span class="v"><a href="assets/cv/CV_Jahid.pdf" download>CV_Jahid.pdf</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="k">GitHub</span>
+          <span class="v"><a href="https://github.com/HelloJahid">github.com/HelloJahid</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="k">LinkedIn</span>
+          <span class="v"><a href="https://www.linkedin.com/in/hellojahid/">linkedin.com/in/hellojahid</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="k">Google Scholar</span>
+          <span class="v"><a href="https://scholar.google.com/citations?user=7gQWnDMAAAAJ&amp;hl">Publication record</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="k">Medium</span>
+          <span class="v"><a href="https://medium.com/@hellojahid">medium.com/@hellojahid</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span data-year>2026</span> Md Jahid Hasan · Melbourne, Australia</p>
+    <p>Built as a static site — no framework, no tracking</p>
+  </div>
+</footer>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+<script src="assets/js/site.js"></script>
 </body>
-
 </html>
