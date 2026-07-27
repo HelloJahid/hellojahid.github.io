@@ -152,6 +152,9 @@ h1, h2, h3, h4 {
 }
 
 p { margin: 0 0 1.15em; max-width: var(--measure); }
+/* Long mono tokens -- DOIs, streamlit URLs, identifiers -- must break rather
+   than force the page wider than the viewport. */
+p, li, figcaption, dd, td, th { overflow-wrap: break-word; }
 p:last-child { margin-bottom: 0; }
 
 a {
@@ -182,6 +185,10 @@ code {
   border-radius: 3px;
   padding: .08em .35em;
   white-space: nowrap;
+}
+@media (max-width: 640px) {
+  /* let long identifiers break on a phone rather than widen the page */
+  code { white-space: normal; overflow-wrap: anywhere; }
 }
 
 caption { caption-side: top; }
@@ -486,7 +493,7 @@ hr {
 
 .tri {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
 }
 .tri-col {
@@ -607,7 +614,7 @@ hr {
 .headed-statement b { color: var(--accent); font-weight: 400; }
 
 @media (max-width: 780px) {
-  .tri { grid-template-columns: 1fr; }
+  .tri { grid-template-columns: minmax(0, 1fr); }
   .tri-col {
     padding: 1.6rem 0;
     border-left: 0;
@@ -715,7 +722,7 @@ hr {
 }
 
 @media (max-width: 700px) {
-  .metric--facts { grid-template-columns: 1fr; gap: 1.25rem; }
+  .metric--facts { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
   .metric--facts .fact {
     padding: 0 0 1.25rem;
     border-left: 0;
@@ -872,7 +879,7 @@ hr {
 
 .case-head {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: .5rem;
   margin-bottom: 2rem;
 }
@@ -896,7 +903,7 @@ hr {
   align-items: start;
 }
 @media (max-width: 900px) {
-  .case-body { grid-template-columns: 1fr; }
+  .case-body { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* Not sticky. It used to be `position: sticky; top: 6rem`, which made it the
@@ -989,7 +996,10 @@ hr {
 
 /* ---------- comparison table ---------- */
 
-.table-scroll { overflow-x: auto; margin: 2rem 0; }
+/* min-width: 0 so this can always shrink below the table's 34rem and scroll
+   internally, whatever layout context it lands in. Without it the table's
+   min-content leaks out to the ancestor and widens the page. */
+.table-scroll { overflow-x: auto; min-width: 0; margin: 2rem 0; }
 table {
   border-collapse: collapse;
   width: 100%;
@@ -1307,7 +1317,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .cred-item .proof a { border-bottom-color: var(--accent-line); }
 
 @media (max-width: 780px) {
-  .cred { grid-template-columns: 1fr; }
+  .cred { grid-template-columns: minmax(0, 1fr); }
   .cred-item, .cred-item:nth-child(even) {
     padding: 1.6rem 0;
     border-left: 0;
@@ -1378,7 +1388,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   white-space: nowrap;
 }
 @media (max-width: 620px) {
-  .pub { grid-template-columns: 1fr; gap: .5rem; }
+  .pub { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
 }
 
 .record {
@@ -1504,7 +1514,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 
 @media (max-width: 700px) {
-  .role-item { grid-template-columns: 1fr; gap: .75rem; }
+  .role-item { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
   .role-rail { display: flex; gap: 1rem; padding-top: 0; }
   .role-rail .role-when { margin-top: 0; }
 }
