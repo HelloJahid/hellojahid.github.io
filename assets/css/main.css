@@ -18,8 +18,8 @@
   --surface-sunk: #f1f1ee;
   --ink:          #161a19;
   --ink-soft:     #3d4442;
-  --ink-muted:    #5c6360;
-  --ink-faint:    #676d6a;   /* 4.9:1 on --paper — small mono labels must still pass AA */
+  --ink-muted:    #4f5653;   /* 7.0:1 on --paper */
+  --ink-faint:    #5a615e;   /* 5.9:1 on --paper */
   --rule:         #e3e3de;
   --rule-strong:  #cfcfc9;
   /* Border for real controls (tabs, the theme toggle). Measured 3.2:1 against
@@ -49,8 +49,8 @@
   --surface-sunk: #0b0d0c;
   --ink:          #e8eae9;
   --ink-soft:     #c3c9c7;
-  --ink-muted:    #9aa3a0;
-  --ink-faint:    #7f8a87;   /* 5.2:1 on dark --paper */
+  --ink-muted:    #aab3b0;
+  --ink-faint:    #929d99;   /* 6.7:1 on dark --paper */
   --rule:         #262a29;
   --rule-strong:  #363b3a;
   --control-edge: #626a66;
@@ -68,8 +68,8 @@
     --surface-sunk: #0b0d0c;
     --ink:          #e8eae9;
     --ink-soft:     #c3c9c7;
-    --ink-muted:    #9aa3a0;
-    --ink-faint:    #7f8a87;   /* 5.2:1 on dark --paper */
+    --ink-muted:    #aab3b0;
+    --ink-faint:    #929d99;   /* 6.7:1 on dark --paper */
     --rule:         #262a29;
     --rule-strong:  #363b3a;
     --control-edge: #626a66;
@@ -132,11 +132,13 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  font-size: 1.09rem;
+  line-height: 1.72;
   font-feature-settings: "kern", "liga";
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  /* Deliberately NOT setting -webkit-font-smoothing: antialiased or
+     text-rendering: optimizeLegibility. The first disables subpixel rendering
+     and thins every stroke; the second buys nothing here and rasterises oddly.
+     Together they made the whole page read blurry. Leave the browser alone. */
 }
 
 h1, h2, h3, h4 {
@@ -212,9 +214,9 @@ hr {
 /* Section headers: mono eyebrow over serif title — the core Paper & Signal pattern. */
 .eyebrow {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: .78rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .115em;
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 1rem;
@@ -239,7 +241,7 @@ hr {
 /* mono metadata line, e.g. "IEEE ACCESS · 2024 · Q1" */
 .meta {
   font-family: var(--mono);
-  font-size: .74rem;
+  font-size: .80rem;
   letter-spacing: .07em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -287,7 +289,7 @@ hr {
 }
 .nav a {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: .79rem;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -312,7 +314,7 @@ hr {
 
 /* Nav collapses on narrow screens; the toggle then has to reclaim the auto
    margin, since `.nav + .theme-toggle` still matches a display:none sibling. */
-@media (max-width: 940px) {
+@media (max-width: 1010px) {
   .nav { display: none; }
   .nav + .theme-toggle { margin-left: auto; }
 }
@@ -373,7 +375,7 @@ hr {
 
 .hero .role {
   font-family: var(--mono);
-  font-size: .78rem;
+  font-size: .84rem;
   letter-spacing: .13em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -406,7 +408,7 @@ hr {
 /* mono "chips" — the systems voice, used for every outbound link */
 .chip {
   font-family: var(--mono);
-  font-size: .74rem;
+  font-size: .80rem;
   letter-spacing: .04em;
   color: var(--ink-soft);
   background: var(--surface);
@@ -466,7 +468,7 @@ hr {
 
 .tri-k {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: .79rem;
   font-weight: 500;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -486,7 +488,7 @@ hr {
 
 .chain {
   font-family: var(--mono);
-  font-size: .73rem;
+  font-size: .80rem;
   color: var(--ink-soft);
   letter-spacing: .01em;
   line-height: 1.9;
@@ -501,7 +503,7 @@ hr {
   align-items: center;
   gap: .5rem;
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: .78rem;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -519,7 +521,7 @@ hr {
 .tri-go { margin: .7rem 0 0; max-width: none; }
 .tri-go a {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: .78rem;
   letter-spacing: .06em;
   text-transform: uppercase;
 }
@@ -621,7 +623,7 @@ hr {
 }
 .metric .label {
   font-family: var(--mono);
-  font-size: .78rem;
+  font-size: .84rem;
   line-height: 1.6;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -645,26 +647,27 @@ hr {
    invented. This occupies the same visual slot as .metric and keeps the four
    case studies on one rhythm, using documented facts instead of figures. */
 .metric--facts {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+  /* A three-up grid, not flex-wrap. With flex the third fact dropped to its own
+     row and the strip read as broken rather than as a set. */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-block: 1.5rem;
   gap: 0;
-  padding-block: 1.4rem;
 }
 .metric--facts .fact {
-  padding-right: 2rem;
-  margin-right: 2rem;
-  border-right: 1px solid var(--accent-line);
+  padding-inline: 1.15rem;
+  border-left: 1px solid var(--accent-line);
 }
-.metric--facts .fact:last-child {
-  padding-right: 0;
-  margin-right: 0;
-  border-right: 0;
+.metric--facts .fact:first-child {
+  padding-left: 0;
+  border-left: 0;
 }
+.metric--facts .fact:last-child { padding-right: 0; }
+
 .fact .k {
   display: block;
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   line-height: 1.1;
   color: var(--accent);
   letter-spacing: -0.02em;
@@ -672,93 +675,23 @@ hr {
 .fact .v {
   display: block;
   font-family: var(--mono);
-  font-size: .68rem;
-  letter-spacing: .08em;
+  font-size: .76rem;
+  letter-spacing: .05em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  margin-top: .4rem;
-  max-width: 22ch;
-  line-height: 1.55;
+  margin-top: .45rem;
+  max-width: none;
+  line-height: 1.6;
 }
-@media (max-width: 640px) {
-  .metric--facts { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+
+@media (max-width: 700px) {
+  .metric--facts { grid-template-columns: 1fr; gap: 1.25rem; }
   .metric--facts .fact {
     padding: 0 0 1.25rem;
-    margin: 0;
-    border-right: 0;
+    border-left: 0;
     border-bottom: 1px solid var(--accent-line);
   }
   .metric--facts .fact:last-child { padding-bottom: 0; border-bottom: 0; }
-}
-
-/* ---------- case-study figures ----------
-   Diagrams and outputs sit on a light card regardless of theme, because every
-   supplied figure is drawn on white. Inverting them in dark mode would wreck
-   the colour coding they rely on; a light mat is honest and keeps them legible. */
-.case-figure {
-  margin: 2.75rem 0;
-  padding: 0;
-}
-
-/* Height cap, not width fill. The supplied figures range from 0.58 to 2.14 in
-   aspect ratio; letting them all fill the column width meant the portraits
-   rendered over 1000px tall and stopped the read dead. Capping the height and
-   centring instead gives every figure roughly the same visual weight, whatever
-   shape it is. Detail lost to the cap is one click away via .fig-zoom. */
-.fig-zoom {
-  display: block;
-  width: fit-content;
-  max-width: 100%;
-  margin-inline: auto;
-  position: relative;
-  border: 0;
-  line-height: 0;
-}
-.fig-zoom img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 520px;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  background: #fff;
-}
-.fig-zoom::after {
-  content: "Full size";
-  position: absolute;
-  right: .55rem;
-  bottom: .55rem;
-  font-family: var(--mono);
-  font-size: .62rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  line-height: 1;
-  color: #fff;
-  background: rgba(22, 26, 25, .82);
-  padding: .38rem .6rem;
-  border-radius: 3px;
-  opacity: 0;
-  transition: opacity .15s ease;
-  pointer-events: none;
-}
-.fig-zoom:hover::after,
-.fig-zoom:focus-visible::after { opacity: 1; }
-.fig-zoom:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-
-.case-figure figcaption {
-  font-family: var(--mono);
-  font-size: .72rem;
-  line-height: 1.7;
-  color: var(--ink-faint);
-  margin-top: .85rem;
-  max-width: 62ch;
-  margin-inline: auto;
-}
-.case-figure figcaption b { color: var(--ink-muted); font-weight: 500; }
-
-@media (max-width: 640px) {
-  .fig-zoom img { max-height: 380px; }
 }
 
 /* ---------- asset slot ----------
@@ -781,9 +714,9 @@ hr {
 
 .asset-slot .tag {
   font-family: var(--mono);
-  font-size: .66rem;
+  font-size: .80rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .115em;
   text-transform: uppercase;
   color: var(--accent);
   margin: 0;
@@ -797,7 +730,7 @@ hr {
 }
 .asset-slot .spec {
   font-family: var(--mono);
-  font-size: .71rem;
+  font-size: .78rem;
   line-height: 1.7;
   color: var(--ink-faint);
   margin: 0;
@@ -868,9 +801,9 @@ hr {
 .aside-block + .aside-block { margin-top: 1.9rem; padding-top: 1.9rem; border-top: 1px solid var(--rule); }
 .aside-block h4 {
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: .76rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .115em;
   text-transform: uppercase;
   color: var(--ink-faint);
   margin: 0 0 .85rem;
@@ -880,7 +813,7 @@ hr {
 
 .stack-line {
   font-family: var(--mono);
-  font-size: .74rem;
+  font-size: .80rem;
   line-height: 1.95;
   color: var(--ink-muted);
   letter-spacing: .01em;
@@ -891,7 +824,7 @@ hr {
 .chapter + .chapter { margin-top: 2rem; border-top: 1px dashed var(--rule); }
 .chapter-label {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: .78rem;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -933,7 +866,7 @@ hr {
 /* availability note — used where there is no public repo */
 .note {
   font-family: var(--mono);
-  font-size: .74rem;
+  font-size: .80rem;
   line-height: 1.75;
   color: var(--ink-muted);
   background: var(--surface-sunk);
@@ -961,7 +894,7 @@ th, td {
 }
 thead th {
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: .76rem;
   font-weight: 500;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -1022,7 +955,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 .tab {
   font-family: var(--mono);
-  font-size: .74rem;
+  font-size: .80rem;
   letter-spacing: .05em;
   color: var(--ink-muted);
   background: transparent;
@@ -1092,7 +1025,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   flex: 1 1 auto;
   min-width: 0;
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: .76rem;
   color: var(--ink-faint);
   margin-left: .5rem;
   overflow: hidden;
@@ -1126,7 +1059,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .frame-expand {
   flex: none;
   font-family: var(--mono);
-  font-size: .64rem;
+  font-size: .79rem;
   letter-spacing: .09em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -1151,7 +1084,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 .frame-stub p {
   font-family: var(--mono);
-  font-size: .76rem;
+  font-size: .82rem;
   color: var(--ink-faint);
   max-width: 44ch;
   line-height: 1.8;
@@ -1174,7 +1107,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   align-items: center;
   gap: .7rem;
   font-family: var(--mono);
-  font-size: .74rem;
+  font-size: .80rem;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -1192,14 +1125,14 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 
 .stub-timeout {
   font-family: var(--mono);
-  font-size: .76rem;
+  font-size: .82rem;
   line-height: 1.8;
   color: var(--ink-soft);
   max-width: 46ch;
 }
 .btn {
   font-family: var(--mono);
-  font-size: .76rem;
+  font-size: .82rem;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--paper);
@@ -1226,7 +1159,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 .frame-foot .fallback {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: .79rem;
   color: var(--ink-faint);
   max-width: 64ch;
   line-height: 1.7;
@@ -1254,7 +1187,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .cred-item .covers { font-size: .9rem; color: var(--ink-muted); margin-bottom: 1rem; }
 .cred-item .proof {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: .79rem;
   letter-spacing: .05em;
   color: var(--ink-faint);
   text-transform: uppercase;
@@ -1293,7 +1226,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 .stat .k {
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: .76rem;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -1324,7 +1257,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .pub .venue { font-size: .875rem; color: var(--ink-soft); margin-bottom: .75rem; }
 .pub .venue .q {
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: .76rem;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--accent);
@@ -1351,9 +1284,9 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .record h3,
 .record h4 {
   font-family: var(--mono);
-  font-size: .68rem;
+  font-size: .76rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .115em;
   text-transform: uppercase;
   color: var(--ink-faint);
   margin: 0 0 1rem;
@@ -1406,7 +1339,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 .role-where {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: .79rem;
   letter-spacing: .05em;
   color: var(--ink-muted);
   margin-bottom: .7rem;
@@ -1437,7 +1370,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .post:first-of-type { border-top: 1px solid var(--rule); }
 .post .idx {
   font-family: var(--mono);
-  font-size: .72rem;
+  font-size: .79rem;
   color: var(--accent);
   padding-top: .35rem;
   position: relative;
@@ -1457,7 +1390,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .post h3 a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .post .post-meta {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: .78rem;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -1481,9 +1414,9 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 .stack-group h3 {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: .78rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .115em;
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 1rem;
@@ -1495,7 +1428,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   padding: 0;
   margin: 0;
   font-family: var(--mono);
-  font-size: .78rem;
+  font-size: .84rem;
   line-height: 2.15;
   color: var(--ink-muted);
 }
@@ -1515,8 +1448,8 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 .contact-item .k {
   font-family: var(--mono);
-  font-size: .66rem;
-  letter-spacing: .14em;
+  font-size: .80rem;
+  letter-spacing: .115em;
   text-transform: uppercase;
   color: var(--ink-faint);
   display: block;
@@ -1538,7 +1471,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 }
 .site-footer p {
   font-family: var(--mono);
-  font-size: .7rem;
+  font-size: .78rem;
   letter-spacing: .05em;
   color: var(--ink-faint);
   margin: 0;

@@ -513,13 +513,6 @@
             </div>
           </div>
 
-            <figure class="case-figure">
-              <a class="fig-zoom" href="assets/img/figures/agentproof-runtime.png" target="_blank" rel="noopener">
-            <img src="assets/img/figures/agentproof-runtime.png" alt="The AgentProof runtime: a state machine of prepare, model call, router and tool executor, with the model client and tool transport injected from outside, every step written to a crash-safe JSONL trace, and that trace feeding both the viewer and the CI regression gate."
-                   width="926" height="565" loading="lazy" decoding="async">
-            </a>
-              <figcaption><b>The AgentProof runtime.</b> The model client and tool transport are injected, which is what lets the whole thing run against mocks with no keys and no network. Every run lands in the JSONL flight recorder, which feeds both the trajectory viewer and the CI eval gate.</figcaption>
-            </figure>
 
           <div class="chapter">
             <p class="chapter-label"><span class="n">03</span> · Stage three</p>
@@ -553,13 +546,6 @@
               </div>
             </div>
 
-            <figure class="case-figure">
-              <a class="fig-zoom" href="assets/img/figures/groundproof-pipeline.png" target="_blank" rel="noopener">
-            <img src="assets/img/figures/groundproof-pipeline.png" alt="The GroundProof pipeline: a question with an as-of date enters an adaptive router, then temporal retrieval, then a grader gate that either passes strong evidence on to the supersedence resolver and context pruner, or diverts weak evidence to a corrective fallback that reformulates, retries and falls back to web search."
-                   width="1500" height="1358" loading="lazy" decoding="async">
-            </a>
-              <figcaption><b>Weak evidence never reaches synthesis.</b> The grader gate diverts it into a corrective fallback instead, and the supersedence resolver settles conflicting facts by date before anything is written. Every answer carries dated citations.</figcaption>
-            </figure>
           </div>
         </div>
 
@@ -590,6 +576,21 @@
             </p>
           </div>
         </aside>
+
+          <figure class="case-figure">
+            <a class="fig-zoom" href="assets/img/figures/agentproof-runtime.png" target="_blank" rel="noopener">
+          <img src="assets/img/figures/agentproof-runtime.png" alt="The AgentProof runtime: a state machine of prepare, model call, router and tool executor, with the model client and tool transport injected from outside, every step written to a crash-safe JSONL trace, and that trace feeding both the viewer and the CI regression gate."
+                 width="926" height="565" loading="lazy" decoding="async">
+          </a>
+            <figcaption><b>The AgentProof runtime.</b> The model client and tool transport are injected, which is what lets the whole thing run against mocks with no keys and no network. Every run lands in the JSONL flight recorder, which feeds both the trajectory viewer and the CI eval gate.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <a class="fig-zoom" href="assets/img/figures/groundproof-pipeline.png" target="_blank" rel="noopener">
+          <img src="assets/img/figures/groundproof-pipeline.png" alt="The GroundProof pipeline: a question with an as-of date enters an adaptive router, then temporal retrieval, then a grader gate that either passes strong evidence on to the supersedence resolver and context pruner, or diverts weak evidence to a corrective fallback that reformulates, retries and falls back to web search."
+                 width="1500" height="1358" loading="lazy" decoding="async">
+          </a>
+            <figcaption><b>Weak evidence never reaches synthesis.</b> The grader gate diverts it into a corrective fallback instead, and the supersedence resolver settles conflicting facts by date before anything is written. Every answer carries dated citations.</figcaption>
+          </figure>
       </div>
     </article>
 
@@ -642,21 +643,7 @@
             </div>
           </div>
 
-          <figure class="case-figure">
-            <a class="fig-zoom" href="assets/img/figures/assessauto-architecture.png" target="_blank" rel="noopener">
-            <img src="assets/img/figures/assessauto-architecture.png" alt="AssessAuto architecture: a LangGraph supervisor with a thread checkpointer and DynamoDB memory acts as a pure MCP client, calling one MCP server that exposes five tools — detect_damage on SageMaker, and describe_damage, score_severity, estimate_price and flag_fraud on Claude via Bedrock."
-                 width="1800" height="1011" loading="lazy" decoding="async">
-            </a>
-            <figcaption><b>The supervisor never calls a model directly.</b> Every capability is an MCP tool, so each can be inspected, swapped or tested on its own. Only <code>detect_damage</code> runs on SageMaker; the four reasoning tools are Claude on Bedrock.</figcaption>
-          </figure>
 
-          <figure class="case-figure">
-            <a class="fig-zoom" href="assets/img/figures/assessauto-assessment.jpg" target="_blank" rel="noopener">
-            <img src="assets/img/figures/assessauto-assessment.jpg" alt="A full AssessAuto run: the detector boxes a shattered windshield in purple, and the agents return an overall condition of SEVERE at 88 out of 100, notable damage including a deployed airbag, an AUD repair estimate broken down by cost driver, a consistency check finding no fraud indicators, and a plain-language recommendation."
-                 width="1000" height="1727" loading="lazy" decoding="async">
-            </a>
-            <figcaption><b>One photo in, the whole chain out.</b> Detection, severity, an itemised AUD estimate, a consistency check and a recommendation — with the agent trajectory expandable underneath. Sample photo from the public <a href="https://cardd-ustc.github.io/">CarDD dataset</a>.</figcaption>
-          </figure>
         </div>
 
         <aside class="case-aside">
@@ -680,6 +667,21 @@
             </p>
           </div>
         </aside>
+
+        <figure class="case-figure">
+          <a class="fig-zoom" href="assets/img/figures/assessauto-architecture.png" target="_blank" rel="noopener">
+          <img src="assets/img/figures/assessauto-architecture.png" alt="AssessAuto architecture: a LangGraph supervisor with a thread checkpointer and DynamoDB memory acts as a pure MCP client, calling one MCP server that exposes five tools — detect_damage on SageMaker, and describe_damage, score_severity, estimate_price and flag_fraud on Claude via Bedrock."
+               width="1800" height="1011" loading="lazy" decoding="async">
+          </a>
+          <figcaption><b>The supervisor never calls a model directly.</b> Every capability is an MCP tool, so each can be inspected, swapped or tested on its own. Only <code>detect_damage</code> runs on SageMaker; the four reasoning tools are Claude on Bedrock.</figcaption>
+        </figure>
+        <figure class="case-figure">
+          <a class="fig-zoom" href="assets/img/figures/assessauto-assessment.jpg" target="_blank" rel="noopener">
+          <img src="assets/img/figures/assessauto-assessment.jpg" alt="A full AssessAuto run: the detector boxes a shattered windshield in purple, and the agents return an overall condition of SEVERE at 88 out of 100, notable damage including a deployed airbag, an AUD repair estimate broken down by cost driver, a consistency check finding no fraud indicators, and a plain-language recommendation."
+               width="1000" height="1727" loading="lazy" decoding="async">
+          </a>
+          <figcaption><b>One photo in, the whole chain out.</b> Detection, severity, an itemised AUD estimate, a consistency check and a recommendation — with the agent trajectory expandable underneath. Sample photo from the public <a href="https://cardd-ustc.github.io/">CarDD dataset</a>.</figcaption>
+        </figure>
       </div>
     </article>
 
@@ -724,13 +726,6 @@
             </div>
           </div>
 
-          <figure class="case-figure">
-            <a class="fig-zoom" href="assets/img/figures/cicdagent-pipeline.png" target="_blank" rel="noopener">
-            <img src="assets/img/figures/cicdagent-pipeline.png" alt="The CICDAgent pipeline. CI on pull requests runs ruff and pytest in parallel, then builds the image and scans it with Trivy, and never deploys. CD on push to main lints, tests, builds and pushes a SHA-tagged image to ECR, deploys to staging, smoke tests, waits for manual approval, deploys to production, smoke tests, then notifies Slack. Any job failing posts a separate Slack alert."
-                 width="1560" height="1300" loading="lazy" decoding="async">
-            </a>
-            <figcaption><b>Generated from the actual workflow files</b> in the repo, not sketched. The amber gate is a GitHub Environment with a required reviewer — production cannot ship without a human. The one image built at the start is the same digest promoted to both environments.</figcaption>
-          </figure>
         </div>
 
         <aside class="case-aside">
@@ -754,6 +749,14 @@
             </p>
           </div>
         </aside>
+
+        <figure class="case-figure">
+          <a class="fig-zoom" href="assets/img/figures/cicdagent-pipeline.png" target="_blank" rel="noopener">
+          <img src="assets/img/figures/cicdagent-pipeline.png" alt="The CICDAgent pipeline. CI on pull requests runs ruff and pytest in parallel, then builds the image and scans it with Trivy, and never deploys. CD on push to main lints, tests, builds and pushes a SHA-tagged image to ECR, deploys to staging, smoke tests, waits for manual approval, deploys to production, smoke tests, then notifies Slack. Any job failing posts a separate Slack alert."
+               width="1560" height="1300" loading="lazy" decoding="async">
+          </a>
+          <figcaption><b>Generated from the actual workflow files</b> in the repo, not sketched. The amber gate is a GitHub Environment with a required reviewer — production cannot ship without a human. The one image built at the start is the same digest promoted to both environments.</figcaption>
+        </figure>
       </div>
     </article>
 
