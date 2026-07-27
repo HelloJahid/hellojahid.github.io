@@ -123,6 +123,7 @@
 
 html {
   scroll-behavior: smooth;
+  /* clears the sticky header; it grows to two rows below 880px */
   scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
 }
@@ -312,11 +313,40 @@ hr {
 .nav a.is-active::after { transform: scaleX(1); }
 .nav a.is-active { color: var(--accent); }
 
-/* Nav collapses on narrow screens; the toggle then has to reclaim the auto
-   margin, since `.nav + .theme-toggle` still matches a display:none sibling. */
-@media (max-width: 1010px) {
-  .nav { display: none; }
-  .nav + .theme-toggle { margin-left: auto; }
+/* The nav is never hidden. It used to `display: none` below 1010px, which meant
+   navigation simply vanished on laptops at scaled DPI, on tablets and on every
+   phone, with nothing offered in its place.
+
+   Measured against the real font metrics, the full seven-item bar fits down to
+   ~875px. Below that it moves to its own row and scrolls horizontally, so every
+   link stays reachable and no JavaScript is involved. */
+@media (max-width: 880px) {
+  html { scroll-padding-top: 6.5rem; }
+  .site-header .wrap {
+    flex-wrap: wrap;
+    height: auto;
+    padding-block: .5rem;
+    gap: .5rem 1rem;
+  }
+  .theme-toggle { margin-left: auto; }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    gap: 1.3rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: .15rem;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a {
+    font-size: .75rem;
+    white-space: nowrap;
+    padding-block: .2rem;
+  }
 }
 
 .theme-toggle {
