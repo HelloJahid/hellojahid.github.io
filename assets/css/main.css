@@ -255,10 +255,10 @@ hr {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--paper);   /* fallback where color-mix() is unsupported */
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  backdrop-filter: saturate(180%) blur(12px);
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  /* Solid, not a translucent blur. backdrop-filter forces a full-width
+     compositing layer over the scrolling content, which is the other classic
+     cause of blurry text mid-scroll. A solid bar is also simply easier to read. */
+  background: var(--paper);
   border-bottom: 1px solid transparent;
   transition: border-color .2s ease;
 }
@@ -1598,36 +1598,28 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   max-width: none;
 }
 
-/* ---------- scroll reveal ----------
-   Content is VISIBLE BY DEFAULT. This used to be `opacity: 0` with a JS
-   IntersectionObserver adding the visible class, which meant 26 elements --
-   most of the page -- disappeared if main.js failed to load or threw. The fade
-   is decoration and must never gate the content.
+/* ---------- scroll reveal: REMOVED, deliberately ----------
+   There was a fade-and-rise on a view() timeline here. It caused text to render
+   blurry after a fast scroll, and to stay blurry until something forced a
+   repaint.
 
-   Now it is a pure CSS enhancement on a view-progress timeline: no JS, runs off
-   the main thread, and browsers without support (Firefox still has it behind
-   layout.css.scroll-driven-animations.enabled as of 152) simply show the
-   content with no fade, which is the correct fallback. */
+   Why: `transform` promotes each of the 26 .reveal elements to its own GPU
+   layer, and a scroll-driven animation keeps that layer permanently active
+   because the timeline never ends. During a fast scroll the compositor
+   rasterises active layers at reduced resolution to keep up, then never
+   re-rasterises them at full resolution because the animation is still
+   "running". A fractional translateY mid-range also puts glyphs on sub-pixel
+   offsets, which is blurry by definition.
 
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    @keyframes reveal-in {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: none; }
-    }
-    .reveal {
-      animation: reveal-in linear both;
-      animation-timeline: view();
-      /* Elements already on screen at load are past `entry`, so they render at
-         the end state instead of animating in mid-flight. */
-      animation-range: entry 0% cover 22%;
-    }
-  }
-}
+   The fade was decoration on a site whose entire job is legibility, so it is
+   gone rather than patched. The .reveal classes are left on the markup: they do
+   nothing now, and they make it a six-line change to reinstate if it is ever
+   wanted -- but if it comes back, animate opacity only and never transform.  */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .pulse { animation: none; }
+  .spinner { animation: none; }
   *, *::before, *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
