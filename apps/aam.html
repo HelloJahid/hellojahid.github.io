@@ -525,6 +525,96 @@
       <!-- ── SECTION: Localis Full Delivery ── -->
       <div class="section-group">
         <div class="section-group-header">
+          <span class="section-group-title">CSIRO TraNSIT</span>
+          <span class="section-group-badge">Road Freight</span>
+        </div>
+        <div class="card-grid">
+
+        <!-- =========================================================
+             APP 3 — CSIRO TraNSIT OD Explorer
+             To update the URL, change the href in the launch-btn below.
+             ========================================================= -->
+        <div class="app-card">
+
+          <div class="card-header">
+            <span class="card-icon">🚛</span>
+            <div class="card-meta">
+              <h2 class="card-title">CSIRO TraNSIT OD Explorer</h2>
+              <p class="card-description">
+                An experimental tool for exploring Australian road freight data from the
+                CSIRO TraNSIT Benchmarking platform. Analyse origin–destination freight
+                flows at the LGA level across commodities, costs, emissions, and industries.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-features">
+            <div class="feature-item">
+              <span class="feature-icon">📊</span>
+              <span>
+                <strong>TraNSIT Dashboard —</strong>
+                Enter any Origin → Destination LGA pair to retrieve detailed freight
+                metrics including annual tonnes, transport costs, CO₂ emissions,
+                trip distance, freight value, and industry breakdowns with charts.
+              </span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔬</span>
+              <span>
+                <strong>Commodity OD Rankings —</strong>
+                Rank all freight corridors nationally or from a single origin by
+                individual commodity (e.g. Beer, Wheat, Steel). Filter by commodity,
+                sector, or industry group.
+              </span>
+            </div>
+          </div>
+
+          <!-- App update log — edit the date and note below when the app changes -->
+          <div class="card-update">
+            <span class="update-icon">🔔</span>
+            <span>
+              <span class="update-label">App Update</span>
+              <span class="update-date">(19 Mar 2025):</span>
+              <span class="update-text">More visualisation added to the app based on Commodity Filter Insights.</span>
+            </span>
+          </div>
+
+          <div class="card-footer">
+            <div class="footer-left-group">
+              <span class="status-pill">
+                <span class="status-dot"></span>
+                Live
+              </span>
+              <div class="tags">
+                <span class="tag">Road Freight</span>
+                <span class="tag">OD Analysis</span>
+                <span class="tag">TraNSIT</span>
+                <span class="tag">Experimental</span>
+              </div>
+            </div>
+            <a
+              class="launch-btn"
+              href="https://csirotransit-od-explorer2.streamlit.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open App
+              <svg viewBox="0 0 24 24">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+        <!-- END APP 3 -->
+
+        </div><!-- /.card-grid -->
+      </div><!-- /.section-group CSIRO TraNSIT -->
+
+      <div class="section-group">
+        <div class="section-group-header">
           <span class="section-group-title">Localis Full Delivery</span>
           <span class="section-group-badge">Passenger OD</span>
         </div>
@@ -623,57 +713,55 @@
         </div><!-- /.card-grid -->
       </div><!-- /.section-group Localis Full Delivery -->
 
-      <!-- ── SECTION: Localis Sample Data ── -->
       <div class="section-group">
         <div class="section-group-header">
-          <span class="section-group-title">Localis Sample Data</span>
-          <span class="section-group-badge">Passenger OD</span>
+          <span class="section-group-title">Boundary Reference</span>
+          <span class="section-group-badge">Geospatial</span>
         </div>
+
         <div class="card-grid">
 
         <!-- =========================================================
-             APP 1 — Localis SampleData OD Explorer
-             To update the URL, change the href in the launch-btn below.
+             APP: Australia LGA &amp; Suburb Map (self-hosted, not Streamlit)
              ========================================================= -->
         <div class="app-card">
 
           <div class="card-header">
-            <span class="card-icon">🧭</span>
+            <span class="card-icon">🗺️</span>
             <div class="card-meta">
-              <h2 class="card-title">Localis SampleData OD Explorer</h2>
+              <h2 class="card-title">Australia LGA &amp; Suburb Map</h2>
               <p class="card-description">
-                An interactive analytical tool for exploring device-level mobility data
-                to understand passenger movement patterns across Victoria. Supports
-                origin–destination analysis at the LGA level for Advanced Air Mobility
-                corridor planning.
+                An interactive reference map of every Australian Local Government Area,
+                built on ABS 2021/2025 official boundaries. Drill from the national view
+                into any LGA to see the suburbs it contains — the geography layer the
+                origin–destination analysis above is built on.
               </p>
             </div>
           </div>
 
           <div class="card-features">
             <div class="feature-item">
-              <span class="feature-icon">📍</span>
+              <span class="feature-icon">🗾</span>
               <span>
-                <strong>OD Passenger Flows —</strong>
-                Analyse origin–destination passenger flows derived from large-scale
-                mobility data and explore top travel corridors by trip frequency
-                and device counts.
+                <strong>National Coverage —</strong>
+                All 542 LGAs across 8 states and territories, each shaded by
+                jurisdiction, with area and suburb counts shown on hover.
               </span>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">🕐</span>
+              <span class="feature-icon">🔍</span>
               <span>
-                <strong>Temporal Patterns —</strong>
-                Examine hourly distributions and weekday versus weekend travel trends
-                to characterise regional travel demand behaviour.
+                <strong>LGA Drill-Down —</strong>
+                Click any LGA to zoom in and list the suburbs it contains — 15,331
+                in total — with a search box to filter within the selected area.
               </span>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">📏</span>
+              <span class="feature-icon">🧭</span>
               <span>
-                <strong>Distance-Based Corridor Screening —</strong>
-                Evaluate distance-based travel behaviour to identify long-distance
-                corridors (≥70 km) suitable for AAM feasibility analysis.
+                <strong>State Selection —</strong>
+                Jump straight to any state or territory, or return to the national
+                overview, without losing your place.
               </span>
             </div>
           </div>
@@ -683,8 +771,8 @@
             <span class="update-icon">🔔</span>
             <span>
               <span class="update-label">App Update</span>
-              <span class="update-date">(27 Mar 2026):</span>
-              <span class="update-text">Initial release — device-level OD explorer for Victoria passenger mobility data.</span>
+              <span class="update-date">(10 Aug 2026):</span>
+              <span class="update-text">Initial release — 542 LGAs with suburb-level drill-down on ABS official boundaries.</span>
             </span>
           </div>
 
@@ -695,18 +783,13 @@
                 Live
               </span>
               <div class="tags">
-                <span class="tag">Passenger OD</span>
-                <span class="tag">Mobility Data</span>
-                <span class="tag">Victoria</span>
-                <span class="tag">AAM Planning</span>
+                <span class="tag">LGA Boundaries</span>
+                <span class="tag">Suburbs</span>
+                <span class="tag">ABS 2021/2025</span>
+                <span class="tag">National</span>
               </div>
             </div>
-            <a
-              class="launch-btn"
-              href="https://localis-sampledata2odexplorer.streamlit.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a class="launch-btn" href="aus-lga-suburb-map.html">
               Open App
               <svg viewBox="0 0 24 24">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -717,98 +800,7 @@
           </div>
 
         </div>
-        <!-- END APP 1 -->
-
-        </div><!-- /.card-grid -->
-      </div><!-- /.section-group Localis Sample Data -->
-
-      <!-- ── SECTION: CSIRO TraNSIT ── -->
-      <div class="section-group">
-        <div class="section-group-header">
-          <span class="section-group-title">CSIRO TraNSIT</span>
-          <span class="section-group-badge">Road Freight</span>
-        </div>
-        <div class="card-grid">
-
-        <!-- =========================================================
-             APP 3 — CSIRO TraNSIT OD Explorer
-             To update the URL, change the href in the launch-btn below.
-             ========================================================= -->
-        <div class="app-card">
-
-          <div class="card-header">
-            <span class="card-icon">🚛</span>
-            <div class="card-meta">
-              <h2 class="card-title">CSIRO TraNSIT OD Explorer</h2>
-              <p class="card-description">
-                An experimental tool for exploring Australian road freight data from the
-                CSIRO TraNSIT Benchmarking platform. Analyse origin–destination freight
-                flows at the LGA level across commodities, costs, emissions, and industries.
-              </p>
-            </div>
-          </div>
-
-          <div class="card-features">
-            <div class="feature-item">
-              <span class="feature-icon">📊</span>
-              <span>
-                <strong>TraNSIT Dashboard —</strong>
-                Enter any Origin → Destination LGA pair to retrieve detailed freight
-                metrics including annual tonnes, transport costs, CO₂ emissions,
-                trip distance, freight value, and industry breakdowns with charts.
-              </span>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">🔬</span>
-              <span>
-                <strong>Commodity OD Rankings —</strong>
-                Rank all freight corridors nationally or from a single origin by
-                individual commodity (e.g. Beer, Wheat, Steel). Filter by commodity,
-                sector, or industry group.
-              </span>
-            </div>
-          </div>
-
-          <!-- App update log — edit the date and note below when the app changes -->
-          <div class="card-update">
-            <span class="update-icon">🔔</span>
-            <span>
-              <span class="update-label">App Update</span>
-              <span class="update-date">(19 Mar 2025):</span>
-              <span class="update-text">More visualisation added to the app based on Commodity Filter Insights.</span>
-            </span>
-          </div>
-
-          <div class="card-footer">
-            <div class="footer-left-group">
-              <span class="status-pill">
-                <span class="status-dot"></span>
-                Live
-              </span>
-              <div class="tags">
-                <span class="tag">Road Freight</span>
-                <span class="tag">OD Analysis</span>
-                <span class="tag">TraNSIT</span>
-                <span class="tag">Experimental</span>
-              </div>
-            </div>
-            <a
-              class="launch-btn"
-              href="https://csirotransit-od-explorer2.streamlit.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open App
-              <svg viewBox="0 0 24 24">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                <polyline points="15 3 21 3 21 9"/>
-                <line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
-            </a>
-          </div>
-
-        </div>
-        <!-- END APP 3 -->
+        <!-- END APP -->
 
         <!-- =========================================================
              ADD NEW APPS HERE — copy the app-card block above,
@@ -829,7 +821,7 @@
         </div>
 
         </div><!-- /.card-grid -->
-      </div><!-- /.section-group CSIRO TraNSIT -->
+      </div><!-- /.section-group Boundary Reference -->
 
     </div><!-- /.page-wrap -->
   </main>

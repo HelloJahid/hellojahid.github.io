@@ -222,106 +222,25 @@
     </p>
 
     <p class="lede lede--narrow reveal">
-      Three of the tools built on that pipeline are public and running right
-      now. They're embedded below — not screenshots. Try them.
+      Three of the tools are public and running right now — two origin–destination
+      explorers built on that pipeline, and the boundary layer they sit on.
+      They're embedded below — not screenshots. Try them.
     </p>
 
     <div class="tabs reveal" role="tablist" aria-label="Live applications" data-tabs>
-      <button class="tab" type="button" role="tab" id="tab-full" aria-controls="panel-full" aria-selected="true" tabindex="0">
+      <button class="tab" type="button" role="tab" id="tab-transit" aria-controls="panel-transit" aria-selected="true" tabindex="0">
+        CSIRO TraNSIT Freight <span class="flag">EXP</span>
+      </button>
+      <button class="tab" type="button" role="tab" id="tab-full" aria-controls="panel-full" aria-selected="false" tabindex="-1">
         Localis Full Delivery OD
       </button>
-      <button class="tab" type="button" role="tab" id="tab-sample" aria-controls="panel-sample" aria-selected="false" tabindex="-1">
-        Localis Sample Data OD
-      </button>
-      <button class="tab" type="button" role="tab" id="tab-transit" aria-controls="panel-transit" aria-selected="false" tabindex="-1">
-        CSIRO TraNSIT Freight <span class="flag">EXP</span>
+      <button class="tab" type="button" role="tab" id="tab-lga" aria-controls="panel-lga" aria-selected="false" tabindex="-1">
+        Australia LGA &amp; Suburb Map
       </button>
     </div>
 
     <!-- Panel 1 -->
-    <div class="panel" id="panel-full" role="tabpanel" tabindex="0" aria-labelledby="tab-full"
-         data-app="https://localis-jan26-fulldata-odexplorer.streamlit.app/?embed=true"
-         data-app-title="Localis Full Delivery OD Explorer">
-      <div class="panel-meta">
-        <div class="desc">
-          <h3>Localis Full Delivery OD Explorer (Jan 2026)</h3>
-          <p class="meta">Released 2 Apr 2026 · Full one-month delivery dataset · Victoria</p>
-          <p>
-            Device-level mobility data explored across Victoria on the full
-            Localis delivery dataset for January 2026, rather than the sample —
-            higher-fidelity OD analysis than the tool below. Three functions:
-            <strong>OD passenger flows</strong> (top corridors by trip frequency
-            and device count), <strong>temporal patterns</strong> (hourly
-            distributions, weekday versus weekend), and
-            <strong>distance-based corridor screening</strong>, which identifies
-            long-distance corridors of 70 km or more as candidates for AAM
-            feasibility analysis.
-          </p>
-        </div>
-      </div>
-      <div class="frame">
-        <div class="frame-bar">
-          <span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
-          <a class="url" href="https://localis-jan26-fulldata-odexplorer.streamlit.app/">localis-jan26-fulldata-odexplorer.streamlit.app</a>
-          <button class="frame-expand" type="button" data-expand aria-expanded="false">Expand</button>
-        </div>
-        <div class="frame-stub" data-state="idle">
-          <p class="stub-idle">Loads the live Streamlit app in place. It may take a few seconds to wake.</p>
-          <button class="btn" type="button" data-load>Load live app</button>
-          <p class="stub-loading"><span class="spinner" aria-hidden="true"></span>Waking the app…</p>
-          <p class="stub-timeout">
-            This is taking longer than usual — the app may be cold-starting, or
-            this browser may be blocking the embed. Use the direct link below.
-          </p>
-        </div>
-      </div>
-      <div class="frame-foot">
-        <p class="fallback">If the embed stays blank, the host is blocking framing — open it directly.</p>
-        <a class="chip chip--accent" href="https://localis-jan26-fulldata-odexplorer.streamlit.app/">Open full app <span class="arw">↗</span></a>
-      </div>
-    </div>
-
-    <!-- Panel 2 -->
-    <div class="panel" id="panel-sample" role="tabpanel" tabindex="0" aria-labelledby="tab-sample" hidden
-         data-app="https://localis-sampledata2odexplorer.streamlit.app/?embed=true"
-         data-app-title="Localis SampleData OD Explorer">
-      <div class="panel-meta">
-        <div class="desc">
-          <h3>Localis SampleData OD Explorer</h3>
-          <p class="meta">Released 27 Mar 2026 · Sample dataset · LGA level, Victoria</p>
-          <p>
-            The earlier, sample-data version of the same tool, working at LGA-level
-            granularity across Victoria with the same three functions — OD flows,
-            temporal patterns, and distance-based screening. It predates the
-            full-delivery explorer and is worth keeping visible: together the two
-            show the pipeline's evolution from sample to full scale.
-          </p>
-        </div>
-      </div>
-      <div class="frame">
-        <div class="frame-bar">
-          <span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
-          <a class="url" href="https://localis-sampledata2odexplorer.streamlit.app/">localis-sampledata2odexplorer.streamlit.app</a>
-          <button class="frame-expand" type="button" data-expand aria-expanded="false">Expand</button>
-        </div>
-        <div class="frame-stub" data-state="idle">
-          <p class="stub-idle">Loads the live Streamlit app in place. It may take a few seconds to wake.</p>
-          <button class="btn" type="button" data-load>Load live app</button>
-          <p class="stub-loading"><span class="spinner" aria-hidden="true"></span>Waking the app…</p>
-          <p class="stub-timeout">
-            This is taking longer than usual — the app may be cold-starting, or
-            this browser may be blocking the embed. Use the direct link below.
-          </p>
-        </div>
-      </div>
-      <div class="frame-foot">
-        <p class="fallback">If the embed stays blank, the host is blocking framing — open it directly.</p>
-        <a class="chip chip--accent" href="https://localis-sampledata2odexplorer.streamlit.app/">Open full app <span class="arw">↗</span></a>
-      </div>
-    </div>
-
-    <!-- Panel 3 -->
-    <div class="panel" id="panel-transit" role="tabpanel" tabindex="0" aria-labelledby="tab-transit" hidden
+    <div class="panel" id="panel-transit" role="tabpanel" tabindex="0" aria-labelledby="tab-transit"
          data-app="https://csirotransit-od-explorer2.streamlit.app/?embed=true"
          data-app-title="CSIRO TraNSIT OD Explorer">
       <div class="panel-meta">
@@ -363,6 +282,87 @@
       </div>
     </div>
 
+    <div class="panel" id="panel-full" role="tabpanel" tabindex="0" aria-labelledby="tab-full" hidden
+         data-app="https://localis-jan26-fulldata-odexplorer.streamlit.app/?embed=true"
+         data-app-title="Localis Full Delivery OD Explorer">
+      <div class="panel-meta">
+        <div class="desc">
+          <h3>Localis Full Delivery OD Explorer (Jan 2026)</h3>
+          <p class="meta">Released 2 Apr 2026 · Full one-month delivery dataset · Victoria</p>
+          <p>
+            Device-level mobility data explored across Victoria on the full
+            Localis delivery dataset for January 2026, rather than the sample —
+            higher-fidelity OD analysis than the tool below. Three functions:
+            <strong>OD passenger flows</strong> (top corridors by trip frequency
+            and device count), <strong>temporal patterns</strong> (hourly
+            distributions, weekday versus weekend), and
+            <strong>distance-based corridor screening</strong>, which identifies
+            long-distance corridors of 70 km or more as candidates for AAM
+            feasibility analysis.
+          </p>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <a class="url" href="https://localis-jan26-fulldata-odexplorer.streamlit.app/">localis-jan26-fulldata-odexplorer.streamlit.app</a>
+          <button class="frame-expand" type="button" data-expand aria-expanded="false">Expand</button>
+        </div>
+        <div class="frame-stub" data-state="idle">
+          <p class="stub-idle">Loads the live Streamlit app in place. It may take a few seconds to wake.</p>
+          <button class="btn" type="button" data-load>Load live app</button>
+          <p class="stub-loading"><span class="spinner" aria-hidden="true"></span>Waking the app…</p>
+          <p class="stub-timeout">
+            This is taking longer than usual — the app may be cold-starting, or
+            this browser may be blocking the embed. Use the direct link below.
+          </p>
+        </div>
+      </div>
+      <div class="frame-foot">
+        <p class="fallback">If the embed stays blank, the host is blocking framing — open it directly.</p>
+        <a class="chip chip--accent" href="https://localis-jan26-fulldata-odexplorer.streamlit.app/">Open full app <span class="arw">↗</span></a>
+      </div>
+    </div>
+
+    <div class="panel reveal" id="panel-lga" role="tabpanel" tabindex="0" aria-labelledby="tab-lga" hidden
+         data-app="apps/aus-lga-suburb-map.html"
+         data-app-title="Australia LGA and Suburb Map">
+      <div class="panel-meta">
+        <div class="desc">
+          <h3>Australia LGA &amp; Suburb Map</h3>
+          <p class="meta">Released 10 Aug 2026 &middot; ABS 2021/2025 boundaries &middot; National</p>
+          <p>
+            The geography layer the origin–destination work sits on: every
+            Australian Local Government Area on official ABS boundaries, shaded by
+            state. <strong>542 LGAs</strong> across eight states and territories,
+            and clicking any one of them drills in to list the suburbs it contains
+            — <strong>15,331</strong> in total, with a filter box for searching
+            within the selected area.
+          </p>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span>
+          <a class="url" href="apps/aus-lga-suburb-map.html">hellojahid.github.io/apps/aus-lga-suburb-map.html</a>
+          <button class="frame-expand" type="button" data-expand aria-expanded="false">Expand</button>
+        </div>
+        <div class="frame-stub" data-state="idle">
+          <p class="stub-idle">Loads the map in place. It carries the full boundary set, so give it a moment.</p>
+          <button class="btn" type="button" data-load>Load live app</button>
+          <p class="stub-loading"><span class="spinner" aria-hidden="true"></span>Loading boundaries…</p>
+          <p class="stub-timeout">
+            This is taking longer than usual — the boundary data is large. Use the
+            direct link below.
+          </p>
+        </div>
+      </div>
+      <div class="frame-foot">
+        <p class="fallback">Best explored full screen — the map fills the whole window there.</p>
+        <a class="chip chip--accent" href="apps/aus-lga-suburb-map.html">Open full app <span class="arw">↗</span></a>
+      </div>
+    </div>
+
     <noscript>
       <div class="asset-slot asset-slot--solid">
         <p class="tag">JavaScript is off</p>
@@ -371,10 +371,10 @@
           three applications are live and work fine on their own:
         </p>
         <p class="spec">
+          <a href="https://csirotransit-od-explorer2.streamlit.app/">CSIRO TraNSIT OD Explorer</a><br>
           <a href="https://localis-jan26-fulldata-odexplorer.streamlit.app/">Localis Full Delivery OD Explorer</a><br>
-          <a href="https://localis-sampledata2odexplorer.streamlit.app/">Localis SampleData OD Explorer</a><br>
-          <a href="https://csirotransit-od-explorer2.streamlit.app/">CSIRO TraNSIT OD Explorer</a>
-        </p>
+          <a href="apps/aus-lga-suburb-map.html">Australia LGA &amp; Suburb Map</a>
+</p>
       </div>
     </noscript>
 
