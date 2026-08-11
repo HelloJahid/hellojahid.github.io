@@ -1,0 +1,18 @@
+# The raw statewide density exports: 144.6 MB of HTML across seven states. In the
+# six ABS-2021 exports most of the bulk is hex ring arrays, which
+# apps/trip-density/ derives from the H3 index instead; Victoria uses a different
+# generator and ships as-is. Committing these would put 144.6 MB in git history
+# permanently, in every clone, even after deletion.
+# tools/prepare-trip-density.py reads from here and writes the publishable pages;
+# only those are tracked.
+assets/state-based-trips-heatmap/
+
+# Build tools live in the working copy (portfolio-rebuild/tools/), not here.
+# DEPLOY.md is explicit that tools/ is never published. A copy gets dropped in
+# to run against this tree, but it is not site content.
+tools/
+
+# Tool output, not site content: per-state figures printed while regenerating the
+# maps. Nothing on the site fetches it — the published figures live in
+# docs/trip-density-maps.md.
+apps/trip-density/_stats.json

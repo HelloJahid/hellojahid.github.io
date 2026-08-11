@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State-Based Trip Density Maps — Md Jahid Hasan</title>
+
+<meta name="description" content="Origin trip density across seven Australian states and territories for 2024, aggregated to H3 resolution-8 hexagons — 884,386 hexes over 531 Local Government Areas. Part of the RMIT Advanced Air Mobility analytics work.">
+<link rel="canonical" href="https://hellojahid.github.io/apps/state-based-trip-density-map.html">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101211" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="State-Based Trip Density Maps">
+<meta property="og:description" content="Origin trip density across seven Australian states and territories, 2024. 884,386 H3 hexes over 531 LGAs.">
+<meta property="og:url" content="https://hellojahid.github.io/apps/state-based-trip-density-map.html">
+<meta property="og:image" content="https://hellojahid.github.io/assets/og-image.png">
+
+<!-- Same self-hosted faces as the homepage. No third-party requests on this page. -->
+<link rel="preload" href="../assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+
+<style>
+  /* Paper & Signal, the same tokens as assets/css/main.css. Kept local rather
+     than importing main.css, because this page needs almost none of it. */
+  :root {
+    --paper:#f7f7f5; --surface:#fffffe; --sunk:#f1f1ee;
+    --ink:#161a19; --ink-soft:#3d4442; --ink-muted:#4f5653; --ink-faint:#5a615e;
+    --rule:#e3e3de; --edge:#868c88; --accent:#0f766e; --accent-soft:#0f766e14; --accent-line:#0f766e33;
+    --serif:"Newsreader","Newsreader Fallback",ui-serif,Georgia,serif;
+    --sans:"Inter","Inter Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono","Plex Mono Fallback",ui-monospace,Menlo,Consolas,monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:#101211; --surface:#171a19; --sunk:#0b0d0c;
+      --ink:#e8eae9; --ink-soft:#c3c9c7; --ink-muted:#aab3b0; --ink-faint:#929d99;
+      --rule:#262a29; --edge:#626a66; --accent:#5eead4; --accent-soft:#5eead412; --accent-line:#5eead43d;
+      color-scheme: dark;
+    }
+  }
+
+  *,*::before,*::after { box-sizing: border-box; }
+  body {
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:1.09rem; line-height:1.72;
+  }
+  p, li { overflow-wrap: break-word; }
+  h1,h2,h3 { font-family:var(--serif); font-weight:400; line-height:1.14; letter-spacing:-.015em; margin:0; text-wrap:balance; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-line); }
+  a:hover { border-bottom-color:var(--accent); }
+  a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+
+  .wrap { max-width:1140px; margin-inline:auto; padding-inline:clamp(1.25rem,5vw,3rem); }
+
+  header.top { border-bottom:1px solid var(--rule); }
+  header.top .wrap { display:flex; align-items:center; gap:1rem; height:4rem; }
+  .brand { font-family:var(--serif); font-size:1.0625rem; color:var(--ink); border:0; }
+  .brand:hover { color:var(--accent); }
+  .top nav { margin-left:auto; font-family:var(--mono); font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; }
+  .top nav a { color:var(--ink-muted); border:0; }
+  .top nav a:hover { color:var(--accent); }
+
+  .intro { padding-block:clamp(3rem,7vw,5rem); }
+  .eyebrow {
+    font-family:var(--mono); font-size:.78rem; font-weight:500; letter-spacing:.115em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 1rem;
+  }
+  .intro h1 { font-size:clamp(2.1rem,5vw,3.1rem); margin-bottom:1.25rem; }
+  .lede { font-size:1.125rem; color:var(--ink-soft); max-width:64ch; margin:0 0 1.15em; }
+  .lede:last-child { margin-bottom:0; }
+
+  .totals { display:flex; gap:clamp(1.75rem,5vw,4rem); flex-wrap:wrap; padding:1.75rem 0; border-block:1px solid var(--rule); margin-top:2.5rem; }
+  .totals .n { font-family:var(--serif); font-size:2.2rem; line-height:1; color:var(--accent); letter-spacing:-.03em; font-variant-numeric:lining-nums tabular-nums; }
+  .totals .k { display:block; font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin-top:.5rem; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr)); gap:1.25rem; padding-bottom:clamp(3rem,7vw,5rem); }
+
+  .card { display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:1.5rem 1.6rem 1.4rem; }
+  .card .code { font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 .5rem; }
+  .card h2 { font-size:1.35rem; margin-bottom:1rem; }
+  .card dl { display:grid; grid-template-columns:auto 1fr; gap:.35rem 1rem; margin:0 0 1.25rem; font-size:.88rem; }
+  .card dt { font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); align-self:center; }
+  .card dd { margin:0; color:var(--ink-soft); font-variant-numeric:lining-nums tabular-nums; }
+  .card dd b { color:var(--ink); font-weight:600; }
+  .card .go { margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-top:1rem; border-top:1px solid var(--rule); }
+  .weight { font-family:var(--mono); font-size:.72rem; color:var(--ink-faint); }
+  .btn {
+    font-family:var(--mono); font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); background:var(--accent-soft); border:1px solid var(--accent-line);
+    border-radius:999px; padding:.45rem 1rem; white-space:nowrap;
+  }
+  .btn:hover { border-color:var(--accent); }
+
+  .notes { padding-bottom:clamp(3rem,7vw,5rem); }
+  .notes h3 { font-family:var(--mono); font-size:.74rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 1rem; padding-bottom:.75rem; border-bottom:1px solid var(--rule); }
+  .notes ul { margin:0; padding-left:1.15rem; max-width:70ch; font-size:.95rem; color:var(--ink-muted); }
+  .notes li { margin-bottom:.6rem; }
+  .notes b { color:var(--ink-soft); font-weight:600; }
+
+  footer.bot { border-top:1px solid var(--rule); padding-block:2rem 3rem; }
+  footer.bot .wrap { display:flex; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; }
+  footer.bot p { font-family:var(--mono); font-size:.75rem; letter-spacing:.05em; color:var(--ink-faint); margin:0; }
+</style>
+</head>
+
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Md Jahid Hasan</a>
+    <nav><a href="aam.html">← AAM applications</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <p class="eyebrow">Advanced Air Mobility · Demand characterisation</p>
+      <h1>State-based trip density maps</h1>
+      <p class="lede">
+        Where trips actually start. Device-level mobility data for 2024, aggregated
+        to <strong>H3 resolution-8 hexagons</strong> — roughly 0.7 km² each — drawn in
+        true position and coloured by trip-origin density over ABS 2021 Local
+        Government Area boundaries.
+      </p>
+      <p class="lede">
+        This is the demand layer underneath the origin–destination work: before you can
+        model a corridor, you need to know where the people are. Each state opens as its
+        own full-screen map — drag to pan, scroll to zoom, hover any hex for its counts,
+        and click through an LGA to see its internal structure.
+      </p>
+
+      <div class="totals">
+        <div><span class="n">5.09 bn</span><span class="k">Trips, 2024</span></div>
+        <div><span class="n">884,386</span><span class="k">H3 hexes</span></div>
+        <div><span class="n">531</span><span class="k">LGAs</span></div>
+        <div><span class="n">7</span><span class="k">States &amp; territories</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="grid">
+
+        <article class="card">
+          <p class="code">NSW</p>
+          <h2>New South Wales</h2>
+          <dl>
+            <dt>Trips</dt><dd><b>1,892,062,017</b></dd>
+            <dt>Hexes</dt><dd>235,204</dd>
+            <dt>LGAs</dt><dd>128</dd>
+          </dl>
+          <div class="go">
+            <span class="weight">1.6 MB</span>
+            <a class="btn" href="trip-density/nsw-origin-density-2024.html">Open map</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="code">VIC</p>
+          <h2>Victoria</h2>
+          <dl>
+            <dt>Trips</dt><dd><b>1,316,353,914</b></dd>
+            <dt>Hexes</dt><dd>157,313</dd>
+            <dt>LGAs</dt><dd>76</dd>
+          </dl>
+          <div class="go">
+            <span class="weight">4.5 MB</span>
+            <a class="btn" href="trip-density/vic-origin-density-2024.html">Open map</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="code">WA</p>
+          <h2>Western Australia</h2>
+          <dl>
+            <dt>Trips</dt><dd><b>686,937,171</b></dd>
+            <dt>Hexes</dt><dd>166,342</dd>
+            <dt>LGAs</dt><dd>135</dd>
+          </dl>
+          <div class="go">
+            <span class="weight">1.1 MB</span>
+            <a class="btn" href="trip-density/wa-origin-density-2024.html">Open map</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="code">QLD</p>
+          <h2>Queensland</h2>
+          <dl>
+            <dt>Trips</dt><dd><b>565,684,302</b></dd>
+            <dt>Hexes</dt><dd>193,843</dd>
+            <dt>LGAs</dt><dd>76</dd>
+          </dl>
+          <div class="go">
+            <span class="weight">1.3 MB</span>
+            <a class="btn" href="trip-density/qld-origin-density-2024.html">Open map</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="code">SA</p>
+          <h2>South Australia</h2>
+          <dl>
+            <dt>Trips</dt><dd><b>562,615,489</b></dd>
+            <dt>Hexes</dt><dd>93,445</dd>
+            <dt>LGAs</dt><dd>69</dd>
+          </dl>
+          <div class="go">
+            <span class="weight">1.4 MB</span>
+            <a class="btn" href="trip-density/sa-origin-density-2024.html">Open map</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="code">TAS</p>
+          <h2>Tasmania</h2>
+          <dl>
+            <dt>Trips</dt><dd><b>56,083,192</b></dd>
+            <dt>Hexes</dt><dd>29,695</dd>
+            <dt>LGAs</dt><dd>29</dd>
+          </dl>
+          <div class="go">
+            <span class="weight">0.3 MB</span>
+            <a class="btn" href="trip-density/tas-origin-density-2024.html">Open map</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="code">NT</p>
+          <h2>Northern Territory</h2>
+          <dl>
+            <dt>Trips</dt><dd><b>10,310,856</b></dd>
+            <dt>Hexes</dt><dd>8,544</dd>
+            <dt>LGAs</dt><dd>18</dd>
+          </dl>
+          <div class="go">
+            <span class="weight">0.1 MB</span>
+            <a class="btn" href="trip-density/nt-origin-density-2024.html">Open map</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="notes">
+    <div class="wrap">
+      <h3>How to read these</h3>
+      <ul>
+        <li><b>Two scales.</b> <i>Per-LGA</i> normalises within each area, so structure stays
+          visible in quiet regions as well as busy ones. <i>Shared</i> uses one scale across the
+          state — that is the one to use when comparing LGAs against each other.</li>
+        <li><b>Density is logarithmic.</b> Trip origins span several orders of magnitude between a
+          CBD and the outback; a linear ramp would show one bright dot and nothing else.</li>
+        <li><b>Blank and dashed areas mean withheld, not zero.</b> Only hexes with at least five
+          contributing devices are drawn.</li>
+        <li><b>Victoria adds corridor flow arcs</b> on top of the hexes, with its own label mode
+          to show or hide them. It is also built on ABS ASGS 2023 boundaries; the other six use
+          ABS 2021.</li>
+        <li><b>The ACT is not listed</b> — it is a single Local Government Area, so a per-LGA
+          density map of it has nothing to compare.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="bot">
+  <div class="wrap">
+    <p>Localis device-level mobility aggregate, 2024 · ABS 2021 LGA boundaries</p>
+    <p><a href="../index.html">hellojahid.github.io</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -27,6 +27,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://hellojahid.github.io/apps/state-based-trip-density-map.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://hellojahid.github.io/paper/cardvlm/cardvlm.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
